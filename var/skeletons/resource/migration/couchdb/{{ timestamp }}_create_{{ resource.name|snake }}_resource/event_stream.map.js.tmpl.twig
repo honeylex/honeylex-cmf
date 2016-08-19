@@ -1,0 +1,5 @@
+function(event) {
+    if (/^{{ crate.vendor|snake }}\.{{ crate.name|snake }}\.{{ resource.name|snake }}\-/.test(event._id)) {
+        emit([ event.aggregate_root_identifier, event.seq_number ], 1);
+    }
+}

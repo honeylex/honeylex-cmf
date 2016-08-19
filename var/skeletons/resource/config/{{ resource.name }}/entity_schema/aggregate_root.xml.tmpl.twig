@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<type_schema namespace="{{ crate.vendor }}\{{ crate.name }}\{{ resource.name }}\Model\Aggregate"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns="http://berlinonline.net/trellis/1.0/schema">
+    <type_definition name="{{ resource.name }}">
+        <implementor>\Honeybee\Model\Aggregate\AggregateRootType</implementor>
+        <entity_implementor>\Honeybee\Model\Aggregate\AggregateRoot</entity_implementor>
+        <description>
+            Defines a set of attributes that are used to manage a {{ resource.name|snake }} aggregate-root's internal state.
+        </description>
+        <options>
+            <option name="vendor">{{ crate.vendor }}</option>
+            <option name="package">{{ crate.name }}</option>
+            <option name="is_hierarchical">false</option>
+        </options>
+        <!-- attribute definitions -->
+        <attributes>
+        </attributes>
+    </type_definition>
+</type_schema>

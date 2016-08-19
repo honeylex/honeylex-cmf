@@ -1,0 +1,13 @@
+#
+# Honeylex CMF translations
+---
+en:
+  messages:
+    'Honeybee CQRS & ES integration with the Silex framework': 'Honeybee CQRS & ES integration with the Silex framework'
+  locale:
+    'en': English
+    'de': Deutsch
+
+de:
+  messages:
+    'Honeybee CQRS & ES integration with the Silex framework': 'Honeybee CQRS & ES Integration mit dem Silex framework'

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="{% block view_classes %}{% endblock %}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block page_title %}{{ page_title|default(config('project.name')) }}{% endblock %}</title>
+        <meta name="description" content="Honeylex: Your cqrs plus es app-boilerplate">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+        {% block scripts %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{{ url('home') }}">{{ config('project.name') }}</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <div class="navbar-text dropdown">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{ app.user.username }}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <li><a href="{{ path('hlx.security.user.list') }}">{{ 'Admin'|trans }}</a></li>
+                            {% endif %}
+                            <li><a href="{{ path('hlx.security.user.tasks.modify', { identifier:app.user.identifier }) }}">{{ 'My Account'|trans }}</a></li>
+                            <li><a href="{{ path('hlx.security.logout') }}">{{ 'Logout'|trans }}</a></li>
+                        </ul>
+                    </div>
+                    {% else %}
+                    <p class="navbar-text">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <a href="{{ path('hlx.security.login') }}">{{ 'Login'|trans }}</a> | <a href="{{ path('hlx.security.registration') }}">{{ 'Register'|trans }}</a>
+                    </p>
+                    </ul>
+                    {% endif %}
+                </div>
+            </nav>
+            {% block header %}{% endblock %}
+        </header>
+        <div class="container-fluid">
+        {% if errors is defined and errors|length > 0 %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for error in errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                <ul>
+            </div>
+        {% endif %}
+        {% block content %}{% endblock %}
+        </div>
+        <footer class="container-fluid" style="margin-bottom:10px">
+            <hr>
+            <div class="btn-group pull-right">
+                {% if app.translator.fallbacklocales|length > 1 %}
+                {% for locale in app.translator.fallbacklocales %}
+                <button type="button" class="btn btn-default btn-xs"><a href="{{ localise_route(locale) }}">{{ locale|trans([], 'locale') }}</a></button>
+                {% endfor %}
+                {% endif %}
+            </div>
+            {% block footer %}{% endblock %}
+        </footer>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+#!/usr/bin/env php
+<?php
+
+use Honeybee\FrameworkBinding\Silex\Console\App;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Crate\CrateInfo;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Crate\ListCrates;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Crate\MakeCrate;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Crate\RemoveCrate;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Event\ReplayEvents;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Fixture\ImportFixture;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Migrate\ListTargets;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Migrate\MigrateDown;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Migrate\MigrateUp;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Migrate\TargetInfo;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Project\InstallProject;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Resource\GenerateCode;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Resource\ListResources;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Resource\MakeResource;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Resource\RemoveResource;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Resource\ResourceInfo;
+use Honeybee\FrameworkBinding\Silex\Console\Command\Route\ListRoutes;
+use Symfony\Component\Console\Input\ArgvInput;
+
+$appContext = 'console';
+$localConfigDir = getenv('LOCAL_CONFIG_DIR') ?: '/usr/local/honeylex.local';
+$appCommands = [
+    // Crate
+    CrateInfo::CLASS,
+    ListCrates::CLASS,
+    MakeCrate::CLASS,
+    RemoveCrate::CLASS,
+    // Migrate
+    ListTargets::CLASS,
+    MigrateDown::CLASS,
+    MigrateUp::CLASS,
+    TargetInfo::CLASS,
+    // Replay
+    ReplayEvents::CLASS,
+    // Fixture
+    ImportFixture::CLASS,
+    // Resource
+    GenerateCode::CLASS,
+    ListResources::CLASS,
+    MakeResource::CLASS,
+    RemoveResource::CLASS,
+    ResourceInfo::CLASS,
+    // Project
+    InstallProject::CLASS,
+    // Route
+    ListRoutes::CLASS,
+];
+
+require_once __DIR__.'/../vendor/autoload.php';
+
+set_time_limit(0);
+
+$appEnv = (new ArgvInput)->getParameterOption([ '--env', '-e' ], getenv('APP_ENV') ?: 'dev');
+
+$app = require __DIR__.'/../app/bootstrap.php';
+$app->boot();
+$app->flush();
+
+$appState = [ ':app' => $app, ':appCommands' => $appCommands ];
+$app['honeybee.service_locator']->createEntity(App::CLASS, $appState)->run();

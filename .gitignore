@@ -1,0 +1,7 @@
+.project
+.buildpath
+.DS_Store
+.settings/
+/vendor/
+/var/cache
+/tags

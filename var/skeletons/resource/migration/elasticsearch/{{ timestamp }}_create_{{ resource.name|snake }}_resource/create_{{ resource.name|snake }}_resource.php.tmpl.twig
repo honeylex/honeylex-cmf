@@ -1,0 +1,42 @@
+<?php
+
+namespace {{ crate.namespace }}\Migration\Elasticsearch;
+
+use Honeybee\Infrastructure\Migration\ElasticsearchMigration;
+use Honeybee\Infrastructure\Migration\MigrationTargetInterface;
+use Honeybee\Infrastructure\Migration\MigrationInterface;
+
+class Migration_{{ timestamp }}_Create{{ resource.name }}Resource extends ElasticsearchMigration
+{
+    protected function up(MigrationTargetInterface $migration_target)
+    {
+        $this->updateMappings($migration_target);
+    }
+
+    protected function down(MigrationTargetInterface $migration_target)
+    {
+    }
+
+    public function getDescription($direction = MigrationInterface::MIGRATE_UP)
+    {
+        if ($direction === MigrationInterface::MIGRATE_UP) {
+            return 'Will create the elasticsearch type for the {{ resource.name }}\'s view data.';
+        }
+    }
+
+    public function isReversible()
+    {
+        return false;
+    }
+
+    protected function getIndexSettingsPath(MigrationTargetInterface $migration_target)
+    {
+    }
+
+    protected function getTypeMappingPaths(MigrationTargetInterface $migration_target)
+    {
+        return [
+            '{{ crate.vendor|snake }}-{{ crate.name|snake }}-{{ resource.name|snake }}-standard' => __DIR__ . DIRECTORY_SEPARATOR . '{{ resource.name|snake }}-standard-{{ timestamp }}-mapping.json'
+        ];
+    }
+}

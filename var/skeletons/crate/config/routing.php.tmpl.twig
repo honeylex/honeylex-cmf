@@ -1,0 +1,7 @@
+<?php
+
+// everything in here will be mounted below the prefix '/{{ crate.name|snake }}'
+
+use {{ crate.namespace }}\Controller\IndexController;
+
+$routing->get('/', [ IndexController::CLASS, 'read' ])->bind('{{ crate.prefix }}.index');

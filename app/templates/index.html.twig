@@ -1,0 +1,12 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{ config('project.name') }}</h1>
+        <p>{{ config('project.description')|trans }}</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}{% endblock %}

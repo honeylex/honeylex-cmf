@@ -1,0 +1,14 @@
+#
+# {{ crate.name }} specific connections.
+---
+{{ crate.prefix }}.event_source:
+  class: Honeybee\Infrastructure\DataAccess\Connector\GuzzleConnector
+  settings:
+#    auth:
+#      username: ${couchdb.user}
+#      password: ${couchdb.password}
+    host: ${couchdb.host}
+    port: ${couchdb.port}
+    transport: ${couchdb.transport}
+    database: ${project.database.prefix}%2B{{ crate.vendor|snake }}-{{ crate.name|snake }}
+    status_test: /

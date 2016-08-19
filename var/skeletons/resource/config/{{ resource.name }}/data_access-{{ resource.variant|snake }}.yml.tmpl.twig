@@ -1,0 +1,43 @@
+#
+# Connections that are used for the Security crate's UserType {{ resource.variant }} projection
+---
+storage_writers:
+  {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::projection.{{ resource.variant|snake }}::view_store::writer:
+    class: Honeybee\Infrastructure\DataAccess\Storage\Elasticsearch\Projection\ProjectionWriter
+    connection: honeybee.view_store
+    settings:
+      index: ${project.database.prefix}.{{ crate.vendor|snake }}-{{ crate.name|snake }}
+      type: {{ crate.vendor|snake }}-{{ crate.name|snake }}-{{ resource.name|snake }}-{{ resource.variant|snake }}
+      parameters:
+        index:
+          refresh: true
+        delete:
+          refresh: true
+
+storage_readers:
+  {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::projection.{{ resource.variant|snake }}::view_store::reader:
+    class: Honeybee\Infrastructure\DataAccess\Storage\Elasticsearch\Projection\ProjectionReader
+    connection: honeybee.view_store
+    settings:
+      index: ${project.database.prefix}.{{ crate.vendor|snake }}-{{ crate.name|snake }}
+      type: {{ crate.vendor|snake }}-{{ crate.name|snake }}-{{ resource.name|snake }}-{{ resource.variant|snake }}
+    dependencies:
+      projection_type: {{ crate.vendor }}\{{ crate.name }}\{{ resource.name }}\Projection\{{ resource.variant }}\{{ resource.name }}Type
+
+finders:
+  {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::projection.{{ resource.variant|snake }}::view_store::finder:
+    class: Honeybee\Infrastructure\DataAccess\Finder\Elasticsearch\Projection\ProjectionFinder
+    connection: honeybee.view_store
+    settings:
+      index: ${project.database.prefix}.{{ crate.vendor|snake }}-{{ crate.name|snake }}
+      type: {{ crate.vendor|snake }}-{{ crate.name|snake }}-{{ resource.name|snake }}-{{ resource.variant|snake }}
+      log_search_query: false
+
+query_services:
+  {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::projection.{{ resource.variant|snake }}::query_service:
+    class: Honeybee\Infrastructure\DataAccess\Query\ProjectionQueryService
+    finder_mappings:
+      default:
+        finder: {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::projection.{{ resource.variant|snake }}::view_store::finder
+        query_translation:
+          class: Honeybee\Infrastructure\DataAccess\Finder\Elasticsearch\CriteriaQueryTranslation

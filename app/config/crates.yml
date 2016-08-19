@@ -1,0 +1,36 @@
+#
+# Honeylex CMF crates configuration
+---
+Hlx\Security\SecurityCrate:
+  settings:
+    routing_prefix: /
+    roles:
+      default_role: user
+      available_roles: [ user, administrator ]
+    auto_login:
+      enabled: true
+      firewall: default
+      target_path: home
+    recaptcha:
+      enabled: false
+      site_key: ${recaptcha.site_key}
+      secret_key: ${recaptcha.secret_key}
+    api:
+      enabled: false
+    oauth:
+      facebook:
+        enabled: false
+        app_key: ${oauth.facebook.app_key}
+        app_secret: ${oauth.facebook.app_secret}
+        scope: [ public_profile, email ]
+        fields: [ id, name, email, first_name, last_name ]
+        field_mapping: { firstname: first_name, lastname: last_name }
+    firewalls:
+      default:
+        form:
+          default_target_path: /
+        logout:
+          target_url: /
+        remember_me:
+          key: Soob3iGsh9oM
+          lifetime: 1209000

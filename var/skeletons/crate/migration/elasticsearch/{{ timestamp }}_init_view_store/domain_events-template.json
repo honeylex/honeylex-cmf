@@ -1,0 +1,40 @@
+{
+    "template": "*.domain_events",
+    "order": 0,
+    "settings": {
+        "number_of_shards": 2,
+        "number_of_replicas": 0
+    },
+    "mappings": {
+        "domain_event": {
+            "_source": {
+              "enabled": true
+            },
+            "dynamic": false,
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "aggregate_root_identifier": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "aggregate_root_type": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "seq_number": {
+                    "type": "integer"
+                },
+                "uuid": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "iso_date": {
+                    "type": "date"
+                }
+            }
+        }
+    }
+}

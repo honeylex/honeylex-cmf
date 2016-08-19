@@ -1,0 +1,14 @@
+#
+# service configuration for the {{ crate.name }} crate
+---
+{{ crate.prefix }}.user.hello_service:
+  class: {{ crate.namespace }}\User\HelloService
+  options:
+    greetings:
+      - Hello world!
+      - Honeylux says hello!
+      - Welcome to your Honeylux app boilerplate!
+  provisioner:
+    class: Honeybee\FrameworkBinding\Silex\Service\Provisioner\DefaultProvisioner
+    settings:
+      share: true

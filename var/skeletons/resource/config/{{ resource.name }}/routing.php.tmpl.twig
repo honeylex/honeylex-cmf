@@ -1,0 +1,9 @@
+<?php
+
+// everything in here will be mounted below the prefix '/{{ crate.name|snake }}/{{ resource.name|snake }}'
+
+use {{ crate.vendor }}\{{ crate.name }}\{{ resource.name }}\Controller\IndexController;
+
+$routing->mount('/{{ resource.name|snake }}', function ($routing) {
+    $routing->get('/', [ IndexController::CLASS, 'read' ])->bind('{{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}.index');
+});

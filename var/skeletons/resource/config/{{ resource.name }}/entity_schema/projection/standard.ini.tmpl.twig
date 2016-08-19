@@ -1,0 +1,8 @@
+; Common settings for trellis's code generator
+cache_dir=../codecache
+deploy_dir=../../../../lib/{{ resource.name }}/Projection
+template_directory=../../../../../../../var/trellis_templates/
+
+; Integrate the plugin that is responsible for generating the module's elasticsearch mapping
+[plugin:\Honeybee\FrameworkBinding\Silex\Console\Scaffold\ElasticsearchMappingPlugin]
+deploy_path=./codecache/{{ resource.name|snake }}-{{ resource.variant|snake }}-{{ timestamp }}-mapping.json

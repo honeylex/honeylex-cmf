@@ -1,0 +1,41 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - couchdb:couchdb
+      - elasticsearch:elasticsearch
+      - rabbitmq:rabbitmq
+    volumes:
+      - ../../:/var/www
+      - ../logs:/var/log/supervisor
+      - ../logs:/var/log/php
+      - ./conf/environment:/usr/local/env
+      - ./conf/nginx/sites:/etc/nginx/conf.d
+    environment:
+      LOCAL_CONFIG_DIR: /usr/local/env
+  
+  couchdb:
+    image: couchdb:latest
+    ports:
+      - "5984:5984"
+    volumes:
+      - ../../data/couchdb:/usr/local/var/lib/couchdb
+  
+  elasticsearch:
+    image: elasticsearch:latest
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  rabbitmq:
+    image: rabbitmq:3.6-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: honeylex
+      RABBITMQ_DEFAULT_PASS: honeylex

@@ -1,0 +1,240 @@
+{
+    "settings": {
+        "number_of_shards": 2,
+        "number_of_replicas": 0,
+        "refresh_interval": "5s",
+        "analysis": {
+            "analyzer": {
+                "default": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "lowercase"
+                    ]
+                },
+                "AutoCompleteAnalyzer": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "lowercase",
+                        "edge"
+                    ]
+                },
+                "IcuAnalyzer_DE": {
+                    "type": "custom",
+                    "tokenizer": "keyword",
+                    "filter": [
+                        "collation_de"
+                    ]
+                },
+                "MaterializedPath": {
+                    "type": "custom",
+                    "tokenizer": "path_hierarchy"
+                }
+            },
+            "filter": {
+                "snowball": {
+                    "type": "snowball",
+                    "language": "German2"
+                },
+                "edge": {
+                    "type": "edgeNGram",
+                    "min_gram": 1,
+                    "max_gram": 10,
+                    "side": "front"
+                },
+                "collation_de": {
+                    "type": "icu_collation",
+                    "language": "de",
+                    "country": "DE",
+                    "alternate": "shifted",
+                    "caseLevel": true,
+                    "caseFirst": "upper",
+                    "numeric": true,
+                    "hiraganaQuaternaryMode": false
+                }
+            },
+            "tokenizer": {
+                "path_hierarchy": {
+                    "type": "path_hierarchy",
+                    "delimiter": "/"
+                }
+            }
+        }
+    },
+    "mappings": {
+        "_default_": {
+            "_source": {
+              "enabled": true
+            },
+            "dynamic": true,
+            "dynamic_templates": [
+                {
+                    "std_identifier": {
+                        "match": "identifier",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_referenced_identifier": {
+                        "match": "referenced_identifier",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_uuid": {
+                        "match": "uuid",
+                        "type": "string",
+                        "mapping": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_type": {
+                        "match": "@type",
+                        "type": "string",
+                        "mapping": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_language": {
+                        "match": "language",
+                        "type": "string",
+                        "mapping": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_version": {
+                        "match": "version",
+                        "match_mapping_type": "long",
+                        "mapping": {
+                            "type": "long"
+                        }
+                    }
+                },
+                {
+                    "std_revision": {
+                        "match": "revision",
+                        "match_mapping_type": "long",
+                        "mapping": {
+                            "type": "long"
+                        }
+                    }
+                },
+                {
+                    "std_short_id": {
+                        "match": "short_id",
+                        "match_mapping_type": "long",
+                        "mapping": {
+                            "type": "long"
+                        }
+                    }
+                },
+                {
+                    "std_modified_at": {
+                        "match": "modified_at",
+                        "match_mapping_type": "date",
+                        "mapping": {
+                            "type": "date",
+                            "format": "strict_date_time"
+                        }
+                    }
+                },
+                {
+                    "std_created_at": {
+                        "match": "created_at",
+                        "match_mapping_type": "date",
+                        "mapping": {
+                            "type": "date",
+                            "format": "strict_date_time"
+                        }
+                    }
+                },
+                {
+                    "std_metadata": {
+                        "match": "metadata",
+                        "mapping": {
+                            "type": "object",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_version_list": {
+                        "path_match": "versions.*",
+                        "mapping": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_parent_node_id": {
+                        "match": "parent_node_id",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "type": "string",
+                            "null_value": "",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_materialized_path": {
+                        "match": "materialized_path",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "type": "string",
+                            "null_value": "",
+                            "analyzer": "MaterializedPath"
+                        }
+                    }
+                },
+                {
+                    "std_workflow_state": {
+                        "match": "workflow_state",
+                        "mapping": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "std_workflow_params": {
+                        "match": "workflow_params",
+                        "mapping": {
+                            "type": "object",
+                            "index": "not_analyzed"
+                        }
+                    }
+                },
+                {
+                    "default_text": {
+                        "match": "*",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

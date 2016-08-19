@@ -1,0 +1,28 @@
+#
+# Connections that are used for the Security crate's UserType.
+---
+storage_writers:
+  {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::domain_event::event_source::writer:
+    class: Honeybee\Infrastructure\DataAccess\Storage\CouchDb\EventStream\EventStreamAppender
+    connection: {{ crate.vendor|snake }}.{{ crate.name|snake }}.event_source
+
+storage_readers:
+  {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::event_stream::event_source::reader:
+    class: Honeybee\Infrastructure\DataAccess\Storage\CouchDb\EventStream\EventStreamReader
+    connection: {{ crate.vendor|snake }}.{{ crate.name|snake }}.event_source
+    settings:
+      design_doc: {{ crate.vendor|snake }}-{{ crate.name|snake }}-user
+
+  {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::domain_event::event_source::reader:
+    class: Honeybee\Infrastructure\DataAccess\Storage\CouchDb\DomainEvent\DomainEventReader
+    connection: {{ crate.vendor|snake }}.{{ crate.name|snake }}.event_source
+    settings:
+      design_doc: {{ crate.vendor|snake }}-{{ crate.name|snake }}-user
+
+units_of_work:
+  {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::domain_event::event_source::unit_of_work:
+    class: Honeybee\Infrastructure\DataAccess\UnitOfWork\UnitOfWork
+    event_reader: {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::event_stream::event_source::reader
+    event_writer: {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}::domain_event::event_source::writer
+    dependencies:
+      aggregate_root_type: {{ crate.vendor }}\{{ crate.name }}\{{ resource.name }}\Model\Aggregate\{{ resource.name }}Type

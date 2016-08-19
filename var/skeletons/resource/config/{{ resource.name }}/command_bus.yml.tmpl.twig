@@ -1,0 +1,9 @@
+subscriptions:
+  - transport: sync
+    commands:
+      {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}.create_{{ resource.name|snake }}:
+        handler: {{ crate.vendor }}\{{ crate.name }}\{{ resource.name }}\Model\Task\Create{{ resource.name }}\Create{{ resource.name }}CommandHandler
+      {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}.modify_{{ resource.name|snake }}:
+        handler: {{ crate.vendor }}\{{ crate.name }}\{{ resource.name }}\Model\Task\Modify{{ resource.name }}\Modify{{ resource.name }}CommandHandler
+      {{ crate.vendor|snake }}.{{ crate.name|snake }}.{{ resource.name|snake }}.proceed_{{ resource.name|snake }}_workflow:
+        handler: {{ crate.vendor }}\{{ crate.name }}\{{ resource.name }}\Model\Task\Proceed{{ resource.name }}Workflow\Proceed{{ resource.name }}WorkflowCommandHandler

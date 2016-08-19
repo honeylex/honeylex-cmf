@@ -1,0 +1,41 @@
+<?php
+
+namespace {{ crate.namespace }}\Migration\CouchDb;
+
+use Honeybee\Infrastructure\Migration\CouchDbMigration;
+use Honeybee\Infrastructure\Migration\MigrationTargetInterface;
+use Honeybee\Infrastructure\Migration\MigrationInterface;
+
+class Migration_{{ timestamp }}_InitEventSource extends CouchDbMigration
+{
+    protected function up(MigrationTargetInterface $migration_target)
+    {
+        $this->createDatabaseIfNotExists($migration_target);
+    }
+
+    protected function down(MigrationTargetInterface $migration_target)
+    {
+        $this->deleteDatabase($migration_target);
+    }
+
+    public function getDescription($direction = MigrationInterface::MIGRATE_UP)
+    {
+        if ($direction === MigrationInterface::MIGRATE_UP) {
+            return 'Will initially setup a couchdb database for the {{ crate.name }}\'s context.';
+        }
+        return 'Will deinit the couchdb database for the {{ crate.name }}\'s context.';
+    }
+
+    public function isReversible()
+    {
+        return true;
+    }
+
+    protected function getViewsDirectory()
+    {
+    }
+
+    protected function getDesignDocName()
+    {
+    }
+}

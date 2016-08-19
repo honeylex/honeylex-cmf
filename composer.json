@@ -1,0 +1,35 @@
+{
+    "name": "honeylex/honeylex-cmf",
+    "description": "Honeybee CQRS & ES integration with the Silex framework.",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=5.6.1",
+        "honeylex/honeylex": "master@dev",
+        "roave/security-advisories": "master@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.3",
+        "squizlabs/php_codesniffer": "~2.3",
+        "silex/web-profiler": "~2.0"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "scripts": {
+        "run": [
+            "echo 'Started web server on http://localhost:8888'",
+            "php -S localhost:8888 -t web web/index_dev.php"
+        ],
+        "code-sniffer": "vendor/bin/phpcs --extensions=php --standard=psr2 app tests/",
+        "docker:up": "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} up -d",
+        "docker:down": "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} down",
+        "docker:stop": "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} stop",
+        "docker:start": "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} start",
+        "docker:build": [
+            "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} up --build -d",
+            "docker exec -i ${PWD##*/}_elasticsearch_1 bin/plugin install analysis-icu",
+            "docker exec -i ${PWD##*/}_elasticsearch_1 bin/plugin install mobz/elasticsearch-head",
+            "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} restart"
+        ]
+    }
+}
