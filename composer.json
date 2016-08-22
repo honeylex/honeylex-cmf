@@ -6,6 +6,7 @@
     "require": {
         "php": ">=5.6.1",
         "honeylex/honeylex": "master@dev",
+        "honeylex/hlx-security": "master@dev",
         "roave/security-advisories": "master@dev"
     },
     "require-dev": {

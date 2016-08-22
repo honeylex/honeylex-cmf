@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa5b69068dc016ab146e662f1628c00a",
-    "content-hash": "87c28c4b405ae3e579847d2f4cddb0d5",
+    "hash": "737c0292c9f83c9f7a7f85372b6d0288",
+    "content-hash": "16f98e33705106fa412126df68e05eb5",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -955,19 +955,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "2ce02f157f519507a6636f5722ba6c98abc726ba"
+                "reference": "2b05104089edb8602828694a0d217a1dc9c5ce12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/2ce02f157f519507a6636f5722ba6c98abc726ba",
-                "reference": "2ce02f157f519507a6636f5722ba6c98abc726ba",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/2b05104089edb8602828694a0d217a1dc9c5ce12",
+                "reference": "2b05104089edb8602828694a0d217a1dc9c5ce12",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "~2.5",
                 "guzzlehttp/guzzle": "^6.2.1",
                 "honeybee/honeybee": "master@dev",
-                "honeylex/hlx-security": "master@dev",
                 "nesbot/carbon": "~1.21",
                 "php": ">=5.6.1",
                 "rdlowrey/auryn": "~1.1",
@@ -1003,7 +1002,7 @@
                 "MIT"
             ],
             "description": "Honeybee CQRS & ES integration with the Silex framework.",
-            "time": "2016-08-19 19:53:37"
+            "time": "2016-08-22 10:09:30"
         },
         {
             "name": "league/flysystem",
@@ -5637,6 +5636,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "honeylex/honeylex": 20,
+        "honeylex/hlx-security": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
