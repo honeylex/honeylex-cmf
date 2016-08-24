@@ -14,3 +14,13 @@ project:
   translation:
     default_locale: en
     locale_fallbacks: [ en, de ]
+
+local_configs:
+  recaptcha:
+    name: recaptcha.json
+    type: json
+    load: from_file
+  oauth:
+    name: oauth.json
+    type: json
+    load: from_file

@@ -751,12 +751,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeybee/honeybee.git",
-                "reference": "3bc51a27b04e5ee3debb54cafc6360a3f2a7bd88"
+                "reference": "36098408c48ef8ced7619b677b25eec500cb6e31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/3bc51a27b04e5ee3debb54cafc6360a3f2a7bd88",
-                "reference": "3bc51a27b04e5ee3debb54cafc6360a3f2a7bd88",
+                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/36098408c48ef8ced7619b677b25eec500cb6e31",
+                "reference": "36098408c48ef8ced7619b677b25eec500cb6e31",
                 "shasum": ""
             },
             "require": {
@@ -840,7 +840,7 @@
                 "hexagonal",
                 "messaging"
             ],
-            "time": "2016-08-19 12:24:51"
+            "time": "2016-08-24 15:16:05"
         },
         {
             "name": "honeybee/trellis",
@@ -918,12 +918,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/hlx-security.git",
-                "reference": "6e6f45d2e4a543a3080efa33cd72089ea51d7fb0"
+                "reference": "95b4f3a58af54de78a53d8a958d2da2bee5b03f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/6e6f45d2e4a543a3080efa33cd72089ea51d7fb0",
-                "reference": "6e6f45d2e4a543a3080efa33cd72089ea51d7fb0",
+                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/95b4f3a58af54de78a53d8a958d2da2bee5b03f9",
+                "reference": "95b4f3a58af54de78a53d8a958d2da2bee5b03f9",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +947,7 @@
                 "MIT"
             ],
             "description": "Security & user administration crate for Honeylex.",
-            "time": "2016-08-19 19:25:16"
+            "time": "2016-08-24 15:26:16"
         },
         {
             "name": "honeylex/honeylex",
@@ -955,12 +955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "9f028ee7b3a3b02a49b4876db575607bb27b2652"
+                "reference": "31b10f272d97b5bb79899bb3082360988127a911"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/9f028ee7b3a3b02a49b4876db575607bb27b2652",
-                "reference": "9f028ee7b3a3b02a49b4876db575607bb27b2652",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/31b10f272d97b5bb79899bb3082360988127a911",
+                "reference": "31b10f272d97b5bb79899bb3082360988127a911",
                 "shasum": ""
             },
             "require": {
@@ -1002,7 +1002,7 @@
                 "MIT"
             ],
             "description": "Honeybee CQRS & ES integration with the Silex framework.",
-            "time": "2016-08-22 16:36:56"
+            "time": "2016-08-24 14:42:36"
         },
         {
             "name": "league/flysystem",
@@ -2028,16 +2028,16 @@
         },
         {
             "name": "silex/silex",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Silex.git",
-                "reference": "7420ac96195ea7eb6f1e11dc273be49359dd50ad"
+                "reference": "fd0852ebfa0a4cf1e17d746bb81962ec69bbb6d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Silex/zipball/7420ac96195ea7eb6f1e11dc273be49359dd50ad",
-                "reference": "7420ac96195ea7eb6f1e11dc273be49359dd50ad",
+                "url": "https://api.github.com/repos/silexphp/Silex/zipball/fd0852ebfa0a4cf1e17d746bb81962ec69bbb6d1",
+                "reference": "fd0852ebfa0a4cf1e17d746bb81962ec69bbb6d1",
                 "shasum": ""
             },
             "require": {
@@ -2109,7 +2109,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2016-06-14 09:27:51"
+            "time": "2016-08-22 17:50:21"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5293,17 +5293,17 @@
         },
         {
             "name": "silex/web-profiler",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "target-dir": "Silex/Provider",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Silex-WebProfiler.git",
-                "reference": "605ebe9d16eb9597ab42603d1b4bec595ebf677d"
+                "reference": "e0fff6fb6282eaa73126e5a6a4dd9a258f9d771b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Silex-WebProfiler/zipball/605ebe9d16eb9597ab42603d1b4bec595ebf677d",
-                "reference": "605ebe9d16eb9597ab42603d1b4bec595ebf677d",
+                "url": "https://api.github.com/repos/silexphp/Silex-WebProfiler/zipball/e0fff6fb6282eaa73126e5a6a4dd9a258f9d771b",
+                "reference": "e0fff6fb6282eaa73126e5a6a4dd9a258f9d771b",
                 "shasum": ""
             },
             "require": {
@@ -5345,7 +5345,7 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
-            "time": "2016-06-15 07:44:40"
+            "time": "2016-08-23 17:38:28"
         },
         {
             "name": "squizlabs/php_codesniffer",
