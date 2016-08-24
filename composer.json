@@ -3,6 +3,12 @@
     "description": "Honeybee CQRS & ES integration with the Silex framework.",
     "license": "MIT",
     "type": "library",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:FriendsOfHoneybee/php-amqplib.git"
+        }
+    ],
     "require": {
         "php": ">=5.6.1",
         "honeylex/honeylex": "master@dev",
@@ -30,6 +36,7 @@
             "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} up --build -d",
             "docker exec -i ${PWD##*/}_elasticsearch_1 bin/plugin install analysis-icu",
             "docker exec -i ${PWD##*/}_elasticsearch_1 bin/plugin install mobz/elasticsearch-head",
+            "docker exec -i ${PWD##*/}_rabbitmq_1 rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management",
             "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} restart"
         ]
     }

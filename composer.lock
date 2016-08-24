@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "737c0292c9f83c9f7a7f85372b6d0288",
-    "content-hash": "16f98e33705106fa412126df68e05eb5",
+    "hash": "ec5a3dde955bdaa3812da65f8145a049",
+    "content-hash": "cd8efec6f4d6b69f9b05618bb806947b",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -955,12 +955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "31b10f272d97b5bb79899bb3082360988127a911"
+                "reference": "632a6a8951a11f2ff5a631d96b42e1c33ddfe29a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/31b10f272d97b5bb79899bb3082360988127a911",
-                "reference": "31b10f272d97b5bb79899bb3082360988127a911",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/632a6a8951a11f2ff5a631d96b42e1c33ddfe29a",
+                "reference": "632a6a8951a11f2ff5a631d96b42e1c33ddfe29a",
                 "shasum": ""
             },
             "require": {
@@ -969,6 +969,7 @@
                 "honeybee/honeybee": "master@dev",
                 "nesbot/carbon": "~1.21",
                 "php": ">=5.6.1",
+                "php-amqplib/php-amqplib": "master@dev",
                 "rdlowrey/auryn": "~1.1",
                 "roave/security-advisories": "master@dev",
                 "silex/silex": "~2.0",
@@ -1002,7 +1003,7 @@
                 "MIT"
             ],
             "description": "Honeybee CQRS & ES integration with the Silex framework.",
-            "time": "2016-08-24 14:42:36"
+            "time": "2016-08-24 19:50:42"
         },
         {
             "name": "league/flysystem",
@@ -1432,6 +1433,84 @@
                 "random"
             ],
             "time": "2016-04-03 06:00:07"
+        },
+        {
+            "name": "php-amqplib/php-amqplib",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfHoneybee/php-amqplib.git",
+                "reference": "e6dab50364ce5755f6554bf43fe8c956c2e88047"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfHoneybee/php-amqplib/zipball/e6dab50364ce5755f6554bf43fe8c956c2e88047",
+                "reference": "e6dab50364ce5755f6554bf43fe8c956c2e88047",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "replace": {
+                "videlalvaro/php-amqplib": "self.version"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "scrutinizer/ocular": "^1.1",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "suggest": {
+                "ext-sockets": "Use AMQPSocketConnection"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpAmqpLib\\": "PhpAmqpLib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "PhpAmqpLib\\Tests\\Functional\\": "tests/Functional",
+                    "PhpAmqpLib\\Tests\\Unit\\": "tests/Unit"
+                }
+            },
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Alvaro Videla",
+                    "role": "Original Maintainer"
+                },
+                {
+                    "name": "John Kelly",
+                    "email": "johnmkelly86@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Raúl Araya",
+                    "email": "nubeiro@gmail.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Formerly videlalvaro/php-amqplib.  This library is a pure PHP implementation of the AMQP protocol. It's been tested against RabbitMQ.",
+            "homepage": "https://github.com/php-amqplib/php-amqplib/",
+            "keywords": [
+                "message",
+                "queue",
+                "rabbitmq"
+            ],
+            "support": {
+                "source": "https://github.com/FriendsOfHoneybee/php-amqplib/tree/master"
+            },
+            "time": "2016-07-27 14:55:50"
         },
         {
             "name": "pimple/pimple",
