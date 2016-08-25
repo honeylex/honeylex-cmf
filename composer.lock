@@ -918,12 +918,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/hlx-security.git",
-                "reference": "95b4f3a58af54de78a53d8a958d2da2bee5b03f9"
+                "reference": "f8f5d99721f7c607d00b428f7f8dcb7a14bbbeee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/95b4f3a58af54de78a53d8a958d2da2bee5b03f9",
-                "reference": "95b4f3a58af54de78a53d8a958d2da2bee5b03f9",
+                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/f8f5d99721f7c607d00b428f7f8dcb7a14bbbeee",
+                "reference": "f8f5d99721f7c607d00b428f7f8dcb7a14bbbeee",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +947,7 @@
                 "MIT"
             ],
             "description": "Security & user administration crate for Honeylex.",
-            "time": "2016-08-24 15:26:16"
+            "time": "2016-08-25 18:22:52"
         },
         {
             "name": "honeylex/honeylex",
@@ -955,12 +955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "632a6a8951a11f2ff5a631d96b42e1c33ddfe29a"
+                "reference": "67a3ebc8009dfc1212d8ab54694e7a1a2a59b10d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/632a6a8951a11f2ff5a631d96b42e1c33ddfe29a",
-                "reference": "632a6a8951a11f2ff5a631d96b42e1c33ddfe29a",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/67a3ebc8009dfc1212d8ab54694e7a1a2a59b10d",
+                "reference": "67a3ebc8009dfc1212d8ab54694e7a1a2a59b10d",
                 "shasum": ""
             },
             "require": {
@@ -1003,7 +1003,7 @@
                 "MIT"
             ],
             "description": "Honeybee CQRS & ES integration with the Silex framework.",
-            "time": "2016-08-24 19:50:42"
+            "time": "2016-08-25 16:24:18"
         },
         {
             "name": "league/flysystem",
@@ -4722,16 +4722,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.5.2",
+            "version": "5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "46ec2d1522ae8c9a12aca6b7650e0be78bbb0502"
+                "reference": "08745ede58cb02b4043adadc09a01c09e698e3f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/46ec2d1522ae8c9a12aca6b7650e0be78bbb0502",
-                "reference": "46ec2d1522ae8c9a12aca6b7650e0be78bbb0502",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/08745ede58cb02b4043adadc09a01c09e698e3f7",
+                "reference": "08745ede58cb02b4043adadc09a01c09e698e3f7",
                 "shasum": ""
             },
             "require": {
@@ -4796,20 +4796,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-08-18 11:10:44"
+            "time": "2016-08-25 04:45:28"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.2.4",
+            "version": "3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "4e83390f64e7ce04fcaec2ce95cd72823b431d19"
+                "reference": "8f444748e174e49d5bd2bd7a9bebbf44edbb55fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/4e83390f64e7ce04fcaec2ce95cd72823b431d19",
-                "reference": "4e83390f64e7ce04fcaec2ce95cd72823b431d19",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/8f444748e174e49d5bd2bd7a9bebbf44edbb55fb",
+                "reference": "8f444748e174e49d5bd2bd7a9bebbf44edbb55fb",
                 "shasum": ""
             },
             "require": {
@@ -4855,7 +4855,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-08-17 09:33:51"
+            "time": "2016-08-24 16:58:26"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
