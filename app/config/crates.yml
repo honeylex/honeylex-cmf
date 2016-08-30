@@ -34,3 +34,5 @@ Hlx\Security\SecurityCrate:
         remember_me:
           key: Soob3iGsh9oM
           lifetime: 1209000
+    voters:
+      - Hlx\Security\Voter\OwnershipVoter
