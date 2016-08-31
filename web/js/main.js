@@ -11,7 +11,6 @@ $(document).ready(function() {
     });
 
     $('.json-highlight').each(function(idx, el) {
-        console.log("yay!");
         $(el).html(JSONHighlight($(el).text()));
     });
 });

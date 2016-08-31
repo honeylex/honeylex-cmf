@@ -955,12 +955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "3402a8fe6f6eeb4a9abc94fa54df32b3125a22a1"
+                "reference": "1edf1bdd149f9f500768d6bc643c4b841c73b683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/3402a8fe6f6eeb4a9abc94fa54df32b3125a22a1",
-                "reference": "3402a8fe6f6eeb4a9abc94fa54df32b3125a22a1",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/1edf1bdd149f9f500768d6bc643c4b841c73b683",
+                "reference": "1edf1bdd149f9f500768d6bc643c4b841c73b683",
                 "shasum": ""
             },
             "require": {
@@ -1003,7 +1003,7 @@
                 "MIT"
             ],
             "description": "Honeybee CQRS & ES integration with the Silex framework.",
-            "time": "2016-08-31 16:50:30"
+            "time": "2016-08-31 17:11:57"
         },
         {
             "name": "league/flysystem",
