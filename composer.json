@@ -1,6 +1,7 @@
 {
     "name": "honeylex/honeylex-cmf",
     "description": "Honeybee CQRS & ES integration with the Silex framework.",
+    "keywords": [ "honeybee", "silex", "symfony", "cqrs", "es", "framework", "cmf", "cms", "event sourcing", "api", "security", "oauth" ],
     "license": "MIT",
     "type": "library",
     "repositories": [

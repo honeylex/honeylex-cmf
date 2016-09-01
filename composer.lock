@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ec5a3dde955bdaa3812da65f8145a049",
+    "hash": "450c61958a7684bb70e02be9b6dca6b9",
     "content-hash": "cd8efec6f4d6b69f9b05618bb806947b",
     "packages": [
         {
@@ -751,12 +751,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeybee/honeybee.git",
-                "reference": "b84b4258f8e983a1ac7d5cf743a5e9c5e626b714"
+                "reference": "5fbfd17eaa36687fca31420d679283203e8a59a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/b84b4258f8e983a1ac7d5cf743a5e9c5e626b714",
-                "reference": "b84b4258f8e983a1ac7d5cf743a5e9c5e626b714",
+                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/5fbfd17eaa36687fca31420d679283203e8a59a1",
+                "reference": "5fbfd17eaa36687fca31420d679283203e8a59a1",
                 "shasum": ""
             },
             "require": {
@@ -840,7 +840,7 @@
                 "hexagonal",
                 "messaging"
             ],
-            "time": "2016-08-30 09:21:34"
+            "time": "2016-09-01 10:50:55"
         },
         {
             "name": "honeybee/trellis",
@@ -955,12 +955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "1edf1bdd149f9f500768d6bc643c4b841c73b683"
+                "reference": "dc31f6c63e1acd0680e6e978309d4ffffd92739e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/1edf1bdd149f9f500768d6bc643c4b841c73b683",
-                "reference": "1edf1bdd149f9f500768d6bc643c4b841c73b683",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/dc31f6c63e1acd0680e6e978309d4ffffd92739e",
+                "reference": "dc31f6c63e1acd0680e6e978309d4ffffd92739e",
                 "shasum": ""
             },
             "require": {
@@ -1003,7 +1003,19 @@
                 "MIT"
             ],
             "description": "Honeybee CQRS & ES integration with the Silex framework.",
-            "time": "2016-08-31 17:11:57"
+            "keywords": [
+                "api",
+                "cmf",
+                "cms",
+                "cqrs",
+                "es",
+                "event sourcing",
+                "framework",
+                "honeybee",
+                "silex",
+                "symfony"
+            ],
+            "time": "2016-09-01 15:33:27"
         },
         {
             "name": "league/flysystem",
