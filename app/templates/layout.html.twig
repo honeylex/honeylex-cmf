@@ -27,7 +27,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             {% if is_granted('ROLE_ADMIN') %}
-                            <li><a href="{{ path('hlx.security.user.list') }}">{{ 'Admin'|trans }}</a></li>
+                            <li><a href="{{ path('hlx.security.users') }}">{{ 'Admin'|trans }}</a></li>
                             {% endif %}
                             <li><a href="{{ path('hlx.security.user.tasks.modify', { identifier:app.user.identifier }) }}">{{ 'My Account'|trans }}</a></li>
                             <li><a href="{{ path('hlx.security.logout') }}">{{ 'Logout'|trans }}</a></li>
@@ -49,7 +49,7 @@
             <div class="alert alert-danger">
                 <ul>
                     {% for error in errors %}
-                    <li>{{ error }}</li>
+                    <li>{{ error|trans([], 'errors') }}</li>
                     {% endfor %}
                 <ul>
             </div>
@@ -59,8 +59,8 @@
         <footer class="container-fluid" style="margin-bottom:10px">
             <hr>
             <div class="btn-group pull-right">
-                {% if app.translator.fallbacklocales|length > 1 %}
-                {% for locale in app.translator.fallbacklocales %}
+                {% if app.locale_fallbacks|length > 1 %}
+                {% for locale in app.locale_fallbacks %}
                 <button type="button" class="btn btn-default btn-xs"><a href="{{ localise_route(locale) }}">{{ locale|trans([], 'locale') }}</a></button>
                 {% endfor %}
                 {% endif %}

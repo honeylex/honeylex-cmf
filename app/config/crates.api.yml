@@ -1,0 +1,12 @@
+#
+# Project Api context crates configuration
+---
+Hlx\Security\SecurityCrate:
+  settings:
+    api:
+      enabled: true
+    firewalls:
+      default:
+        guard:
+          authenticators:
+            - hlx.security.token_authenticator

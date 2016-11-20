@@ -22,8 +22,17 @@ use Honeybee\FrameworkBinding\Silex\Console\Command\Route\ListRoutes;
 use Honeybee\FrameworkBinding\Silex\Console\Command\Worker\RunWorker;
 use Symfony\Component\Console\Input\ArgvInput;
 
+require_once __DIR__.'/../vendor/autoload.php';
+
+$hostPrefix = (new ArgvInput)->getParameterOption([ '--host', '-h' ], getenv('HOST_PREFIX'));
 $appContext = 'console';
+$appEnv = (new ArgvInput)->getParameterOption([ '--env', '-e' ], getenv('APP_ENV') ?: 'development');
 $localConfigDir = getenv('LOCAL_CONFIG_DIR') ?: '/usr/local/honeylex.local';
+
+$app = require __DIR__.'/../app/bootstrap.php';
+$app->boot();
+$app->flush();
+
 $appCommands = [
     // Crate
     CrateInfo::CLASS,
@@ -53,15 +62,7 @@ $appCommands = [
     RunWorker::CLASS
 ];
 
-require_once __DIR__.'/../vendor/autoload.php';
-
 set_time_limit(0);
-
-$appEnv = (new ArgvInput)->getParameterOption([ '--env', '-e' ], getenv('APP_ENV') ?: 'dev');
-
-$app = require __DIR__.'/../app/bootstrap.php';
-$app->boot();
-$app->flush();
 
 $appState = [ ':app' => $app, ':appCommands' => $appCommands ];
 $app['honeybee.service_locator']->createEntity(App::CLASS, $appState)->run();

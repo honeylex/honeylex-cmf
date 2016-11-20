@@ -1,8 +1,11 @@
 <?php
 
-$appEnv = 'dev';
+$hostPrefix = getenv('HOST_PREFIX');
 $appContext = 'web';
+$appEnv = 'development';
 $localConfigDir = getenv('LOCAL_CONFIG_DIR') ?: '/usr/local/honeylex.local';
+
+ini_set('display_errors', true);
 
 require_once __DIR__.'/../vendor/autoload.php';
 

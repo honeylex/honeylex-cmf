@@ -1,0 +1,7 @@
+#
+# Project mailer configuration
+---
+swiftmailer:
+  # transport: ~
+  delivery_addresses: []
+

@@ -14,6 +14,7 @@
         "php": ">=5.6.1",
         "honeylex/honeylex": "master@dev",
         "honeylex/hlx-security": "master@dev",
+        "pagerfanta/pagerfanta": "~1.0",
         "roave/security-advisories": "master@dev"
     },
     "require-dev": {
@@ -28,17 +29,17 @@
             "echo 'Started web server on http://localhost:8888'",
             "php -S localhost:8888 -t web web/index_dev.php"
         ],
-        "code-sniffer": "vendor/bin/phpcs --extensions=php --standard=psr2 app tests/",
-        "docker:up": "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} up -d",
-        "docker:down": "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} down",
-        "docker:stop": "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} stop",
-        "docker:start": "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} start",
+        "code-sniffer": "vendor/bin/phpcs --extensions=php --standard=psr2 app tests",
+        "docker:up": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` up -d",
+        "docker:down": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` down",
+        "docker:stop": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` stop",
+        "docker:start": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` start",
         "docker:build": [
-            "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} up --build -d",
-            "docker exec -i ${PWD##*/}_elasticsearch_1 bin/plugin install analysis-icu",
-            "docker exec -i ${PWD##*/}_elasticsearch_1 bin/plugin install mobz/elasticsearch-head",
-            "docker exec -i ${PWD##*/}_rabbitmq_1 rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management",
-            "docker-compose -f ./var/docker/docker-compose.yml -p ${PWD##*/} restart"
+            "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` up --build -d",
+            "docker exec -i `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'`_elasticsearch_1 bin/plugin install analysis-icu",
+            "docker exec -i `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'`_elasticsearch_1 bin/plugin install mobz/elasticsearch-head",
+            "docker exec -i `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'`_rabbitmq_1 rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management",
+            "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` restart"
         ]
     }
 }
