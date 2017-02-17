@@ -31,7 +31,7 @@ bin/console hlx:project:install
 bin/console hlx:migrate:up
 bin/console hlx:fixture:import # creates a default administrator account
 ```
-Your site will then be available at the IP address of your base machine (typically http://192.168.99.100) and you can login as a default administrator with username and password `admin`.
+Your site will then be available at the IP address of your base machine (typically http://192.168.99.100) and you can login as a default administrator with email `admin@honeylex.dev` and password `admin`.
 
 You can also configure various environment files in the ```your-project/var/environment``` folder of your host machine.
 

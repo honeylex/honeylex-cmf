@@ -3,24 +3,35 @@
 ---
 Hlx\Security\SecurityCrate:
   settings:
+    roles:
+      access_rules:
+        - [ '^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY' ]
     auto_login:
       enabled: true
       firewall: default
-      target_path: home
+      target_path: /
     oauth:
       facebook:
         enabled: false
-        app_key: ${oauth.facebook.app_key}
-        app_secret: ${oauth.facebook.app_secret}
+        app_key: '${oauth.facebook.app_key}'
+        app_secret: '${oauth.facebook.app_secret}'
         scope: [ public_profile, email ]
         fields: [ id, name, email, first_name, last_name ]
-        field_mapping: { firstname: first_name, lastname: last_name }
+        field_mapping:
+          firstname: first_name
+          lastname: last_name
+    authenticators:
+      hlx.security.form_login_authenticator: Hlx\Security\Authenticator\FormLoginAuthenticator
     firewalls:
       default:
-        form:
-          default_target_path: /
+        guard:
+          authenticators:
+            - hlx.security.form_login_authenticator
         logout:
           target_url: /
+          logout_path: /logout
+          invalidate_session: true
+          with_csrf: true
         remember_me:
           key: Soob3iGsh9oM
           lifetime: 1209000

@@ -29,7 +29,7 @@
                             {% if is_granted('ROLE_ADMIN') %}
                             <li><a href="{{ path('hlx.security.users') }}">{{ 'Admin'|trans }}</a></li>
                             {% endif %}
-                            <li><a href="{{ path('hlx.security.user.tasks.modify', { identifier:app.user.identifier }) }}">{{ 'My Account'|trans }}</a></li>
+                            <li><a href="{{ path('hlx.security.users.tasks.modify', { userId:app.user.identifier }) }}">{{ 'My Account'|trans }}</a></li>
                             <li><a href="{{ path('hlx.security.logout') }}">{{ 'Logout'|trans }}</a></li>
                         </ul>
                     </div>
