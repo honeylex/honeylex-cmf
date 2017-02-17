@@ -951,12 +951,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "8b1733ced8e9ae27d594a6856d232df5ad0155db"
+                "reference": "3c6fc6a726139d15b4a13db3cf952b6bdffcbf45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/8b1733ced8e9ae27d594a6856d232df5ad0155db",
-                "reference": "8b1733ced8e9ae27d594a6856d232df5ad0155db",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/3c6fc6a726139d15b4a13db3cf952b6bdffcbf45",
+                "reference": "3c6fc6a726139d15b4a13db3cf952b6bdffcbf45",
                 "shasum": ""
             },
             "require": {
@@ -1010,7 +1010,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2016-12-29 16:48:36"
+            "time": "2017-01-17 09:57:08"
         },
         {
             "name": "league/flysystem",
