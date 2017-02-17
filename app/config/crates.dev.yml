@@ -1,0 +1,7 @@
+#
+# Project crates configuration for dev environment
+---
+Hlx\Security\SecurityCrate:
+  settings:
+    recaptcha:
+      enabled: false

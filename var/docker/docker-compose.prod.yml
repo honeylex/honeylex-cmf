@@ -1,0 +1,6 @@
+version: '2'
+services:
+  web:
+    environment:
+      PHP_INI_SCAN_DIR: :/etc/php5/fpm/conf.d
+      APP_ENV: prod

@@ -33,13 +33,6 @@
         "docker:up": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` up -d",
         "docker:down": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` down",
         "docker:stop": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` stop",
-        "docker:start": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` start",
-        "docker:build": [
-            "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` up --build -d",
-            "docker exec -i `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'`_elasticsearch_1 bin/plugin install analysis-icu",
-            "docker exec -i `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'`_elasticsearch_1 bin/plugin install mobz/elasticsearch-head",
-            "docker exec -i `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'`_rabbitmq_1 rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management",
-            "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` restart"
-        ]
+        "docker:start": "docker-compose -f ./var/docker/docker-compose.yml -p `echo ${PWD##*/}|tr '[:upper:]' '[:lower:]'` start"
     }
 }

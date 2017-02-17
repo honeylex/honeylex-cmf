@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    build: .
+    image: friendsofhoneybee/nginx:1.11
     ports:
       - "80:80"
       - "443:443"
@@ -13,26 +13,28 @@ services:
       - ../../:/var/www
       - ../logs:/var/log/supervisor
       - ../logs:/var/log/php
-      - ./conf/environment:/usr/local/env
-      - ./conf/nginx/sites:/etc/nginx/conf.d
+      - ../environment:/usr/local/env
+      - ./nginx:/etc/nginx/conf.d
+      - ./php/fpm:/etc/php5/fpm/conf.d/custom.d
     environment:
       LOCAL_CONFIG_DIR: /usr/local/env
-  
+      PHP_INI_SCAN_DIR: :/etc/php5/fpm/conf.d/custom.d
+
   couchdb:
     image: couchdb:latest
     ports:
       - "5984:5984"
     volumes:
       - ../../data/couchdb:/usr/local/var/lib/couchdb
-  
+
   elasticsearch:
-    image: elasticsearch:latest
+    image: friendsofhoneybee/elasticsearch:2.4
     ports:
       - "9200:9200"
       - "9300:9300"
 
   rabbitmq:
-    image: rabbitmq:3.6-management
+    image: friendsofhoneybee/rabbitmq:3.6-management
     ports:
       - "15672:15672"
       - "5672:5672"

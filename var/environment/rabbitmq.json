@@ -1,6 +1,6 @@
 {
     "user": "honeylex",
     "password": "honeylex",
-    "host": "192.168.99.100",
+    "host": "rabbitmq",
     "port": 5672
 }

@@ -10,7 +10,7 @@ Hlx\Security\SecurityCrate:
         - user
         - administrator
     recaptcha:
-      enabled: false
+      enabled: true
       site_key: ${recaptcha.site_key}
       secret_key: ${recaptcha.secret_key}
     voters:

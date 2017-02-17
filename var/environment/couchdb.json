@@ -1,7 +1,7 @@
 {
     "user": "honeylex",
     "password": "honeylex",
-    "host": "192.168.99.100",
+    "host": "couchdb",
     "port": 5984,
     "transport": "http"
 }

@@ -1,5 +1,5 @@
 {
-    "host": "192.168.99.100",
+    "host": "elasticsearch",
     "port": 9200,
     "transport": "http"
 }
