@@ -26,7 +26,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $hostPrefix = (new ArgvInput)->getParameterOption([ '--host', '-h' ], getenv('HOST_PREFIX'));
 $appContext = 'console';
-$appEnv = (new ArgvInput)->getParameterOption([ '--env', '-e' ], getenv('APP_ENV') ?: 'development');
+$appEnv = (new ArgvInput)->getParameterOption([ '--env', '-e' ], getenv('APP_ENV') ?: 'dev');
 $localConfigDir = getenv('LOCAL_CONFIG_DIR') ?: '/usr/local/honeylex.local';
 
 $app = require __DIR__.'/../app/bootstrap.php';

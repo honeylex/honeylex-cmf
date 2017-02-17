@@ -2,7 +2,7 @@
 
 $hostPrefix = getenv('HOST_PREFIX');
 $appContext = 'api';
-$appEnv = 'production';
+$appEnv = 'prod';
 $localConfigDir = getenv('LOCAL_CONFIG_DIR') ?: '/usr/local/honeylex.local';
 
 ini_set('html_errors', false);
