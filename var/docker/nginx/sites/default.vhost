@@ -1,8 +1,7 @@
 server {
-  server_name default;
-  # set         $host_prefix host_prefix;
-  root        /var/www/web;
-  index       index.php;
+  listen 8000;
+  root /var/www/web;
+  index index.php;
 
   client_max_body_size 16M;
   fastcgi_read_timeout 60;
@@ -16,7 +15,6 @@ server {
     fastcgi_pass unix:/var/run/php5-fpm.sock;
     fastcgi_split_path_info ^(.+\.php)(/.*)$;
     include fastcgi_params;
-    # fastcgi_param HOST_PREFIX $host_prefix;
     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
     fastcgi_param HTTPS off;
   }
