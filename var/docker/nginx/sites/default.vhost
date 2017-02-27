@@ -7,6 +7,10 @@ server {
   fastcgi_read_timeout 60;
   sendfile off;
 
+  location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+    try_files $uri =404;
+  }
+
   location / {
     try_files $uri /index.php$is_args$args;
   }
@@ -17,15 +21,5 @@ server {
     include fastcgi_params;
     fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
     fastcgi_param HTTPS off;
-  }
-
-  location ~ \.php$ {
-    return 404;
-  }
-
-  location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-    expires       off;
-    log_not_found off;
-    access_log    off;
   }
 }
