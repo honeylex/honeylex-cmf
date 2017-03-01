@@ -10,10 +10,16 @@ project:
     prefix: honeylex-cmf
   email:
     from_email: honeylex-cmf@honeylex.dev
-    from_name: Honeylex CMF
+    from_name: Honeylex-CMF
   translation:
     default_locale: en
-    locale_fallbacks: [ en, de ]
+    locale_fallbacks:
+      - en
+      - de
+      - fr
+      - es
+      - ja
+      - ar
 
 local_configs:
   recaptcha:

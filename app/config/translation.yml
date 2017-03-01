@@ -7,6 +7,10 @@ en:
   locale:
     'en': English
     'de': Deutsch
+    'fr': Français
+    'es': Español
+    'ja': 日本語
+    'ar': عربى
 
 de:
   messages:

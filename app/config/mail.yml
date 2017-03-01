@@ -4,4 +4,3 @@
 swiftmailer:
   # transport: ~
   delivery_addresses: []
-

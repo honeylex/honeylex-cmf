@@ -3,7 +3,7 @@
 $hostPrefix = getenv('HOST_PREFIX');
 $appContext = 'web';
 $appEnv = 'dev';
-$localConfigDir = getenv('LOCAL_CONFIG_DIR') ?: '/usr/local/honeylex.local';
+$localConfigDir = getenv('LOCAL_CONFIG_DIR') ?: '/usr/local/env';
 
 ini_set('display_errors', true);
 

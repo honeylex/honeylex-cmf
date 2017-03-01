@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{% block page_title %}{{ page_title|default(config('project.name')) }}{% endblock %}</title>
-        <meta name="description" content="Honeylex: Your cqrs plus es app-boilerplate">
+        <meta name="description" content="{{ config('project.name') }} - {{ config('project.description') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
@@ -15,7 +15,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="{{ url('home') }}">{{ config('project.name') }}</a>
+                        <a class="navbar-brand" href="{{ path('home') }}">{{ config('project.name') }}</a>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -61,7 +61,9 @@
             <div class="btn-group pull-right">
                 {% if app.locale_fallbacks|length > 1 %}
                 {% for locale in app.locale_fallbacks %}
-                <button type="button" class="btn btn-default btn-xs"><a href="{{ localise_route(locale) }}">{{ locale|trans([], 'locale') }}</a></button>
+                <button type="button" class="btn btn-xs {{ app.request_stack.getCurrentRequest().locale == locale ? 'btn-info' : 'btn-default' }}">
+                    <a href="{{ localise_route(locale) }}">{{ locale|trans([], 'locale') }}</a>
+                </button>
                 {% endfor %}
                 {% endif %}
             </div>

@@ -1,31 +1,66 @@
-version: '2'
+version: '3'
 services:
   proxy:
     image: blacklabelops/nginx:latest
     ports:
       - "80:80"
+      - "443:443"
     environment:
-      SERVER1REVERSE_PROXY_LOCATION1: /
-      SERVER1REVERSE_PROXY_PASS1: http://web:8000
+      NGINX_REDIRECT_PORT80: "true"
 
-  web:
-    image: friendsofhoneybee/nginx:1.11
+      #SERVER1SERVER_NAME: honeylex.dev
+      SERVER1HTTP_ENABLED: "true"
+      SERVER1HTTPS_ENABLED: "true"
+      SERVER1CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=honeylex.dev/L=Berlin/C=DE
+      SERVER1REVERSE_PROXY_LOCATION1: /
+      SERVER1REVERSE_PROXY_PASS1: http://nginx:8000
+
+  nginx:
+    image: nginx:stable
     ports:
       - "8000:8000"
+    links:
+      - php_fpm:php_fpm
+    volumes:
+      - ../../:/var/www
+      - ../logs:/var/log/nginx
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+
+  php_cli:
+    image: friendsofhoneybee/php:5.6-cli
+    working_dir: /usr/src/myapp
+    links:
+      - couchdb:couchdb
+      - elasticsearch:elasticsearch
+      - rabbitmq:rabbitmq
+    volumes:
+      - ../../:/usr/src/myapp
+      - ../logs:/var/log
+      - ../environment:/usr/local/env:ro
+      - ./php/cli/php.dev.ini:/usr/local/etc/php/php.ini:ro
+    environment:
+      SERVER_HOST: honeylex.dev
+      APP_ENV: dev
+
+  php_fpm:
+    image: friendsofhoneybee/php:5.6-fpm
+    command: ["php-fpm", "--allow-to-run-as-root"]
+    working_dir: /usr/src/myapp
+    ports:
+      - "9000:9000"
     links:
       - couchdb:couchdb
       - elasticsearch:elasticsearch
       - rabbitmq:rabbitmq
     volumes:
       - ../../:/var/www
-      - ../logs:/var/log/supervisor
-      - ../logs:/var/log/php
-      - ../environment:/usr/local/env
-      - ./nginx:/etc/nginx/conf.d
-      - ./php/fpm:/etc/php5/fpm/conf.d/custom.d
+      - ../logs:/var/log
+      - ../environment:/usr/local/env:ro
+      - ./php/fpm/php-fpm.d/www.dev.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ./php/fpm/php.dev.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      LOCAL_CONFIG_DIR: /usr/local/env
-      PHP_INI_SCAN_DIR: :/etc/php5/fpm/conf.d/custom.d
+      SERVER_HOST: honeylex.dev
       APP_ENV: dev
 
   couchdb:
@@ -40,6 +75,10 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    volumes:
+      - ./elasticsearch/config:/usr/share/elasticsearch/config:ro
+    environment:
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
 
   rabbitmq:
     image: friendsofhoneybee/rabbitmq:3.6-management
