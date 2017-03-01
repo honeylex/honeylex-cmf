@@ -8,10 +8,10 @@ services:
     environment:
       NGINX_REDIRECT_PORT80: "true"
 
-      #SERVER1SERVER_NAME: honeylex.dev
+      #SERVER1SERVER_NAME: ${SERVER_HOST}
       SERVER1HTTP_ENABLED: "true"
       SERVER1HTTPS_ENABLED: "true"
-      SERVER1CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=honeylex.dev/L=Berlin/C=DE
+      SERVER1CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=${SERVER_HOST}/L=Berlin/C=DE
       SERVER1REVERSE_PROXY_LOCATION1: /
       SERVER1REVERSE_PROXY_PASS1: http://nginx:8000
 
@@ -40,8 +40,9 @@ services:
       - ../environment:/usr/local/env:ro
       - ./php/cli/php.dev.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      SERVER_HOST: honeylex.dev
-      APP_ENV: dev
+      SERVER_HOST: ${SERVER_HOST}
+      APP_ENV: ${APP_ENV}
+      APP_DEBUG: ${APP_DEBUG}
 
   php_fpm:
     image: friendsofhoneybee/php:5.6-fpm
@@ -60,8 +61,9 @@ services:
       - ./php/fpm/php-fpm.d/www.dev.conf:/usr/local/etc/php-fpm.d/www.conf:ro
       - ./php/fpm/php.dev.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      SERVER_HOST: honeylex.dev
-      APP_ENV: dev
+      SERVER_HOST: ${SERVER_HOST}
+      APP_ENV: ${APP_ENV}
+      APP_DEBUG: ${APP_DEBUG}
 
   couchdb:
     image: couchdb:latest

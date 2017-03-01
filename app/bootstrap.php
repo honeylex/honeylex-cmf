@@ -9,6 +9,7 @@ $configuration = [
     'hostPrefix' => $hostPrefix,
     'appContext' => $appContext,
     'appEnv' => $appEnv,
+    'appDebug' => filter_var($appDebug, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE),
     'core' => [
         'config_dir' => dirname(__DIR__).'/vendor/honeylex/honeylex/app/config/default',
         'dir' => dirname(__DIR__).'/vendor/honeylex/honeylex'
@@ -21,9 +22,9 @@ $configuration = [
 ];
 
 // execute context specific bootstrap
-$contextConfigPath = $projectConfigDir."/bootstrap/$appContext.php";
-if (is_readable($contextConfigPath)) {
-    return require $contextConfigPath;
+$customContextBootstrap = $projectConfigDir."/bootstrap.$appContext.php";
+if (is_readable($customContextBootstrap)) {
+    return require $customContextBootstrap;
 }
 
 // default bootstrap attempt

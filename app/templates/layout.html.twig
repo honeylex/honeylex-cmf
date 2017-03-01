@@ -68,6 +68,12 @@
                 {% endif %}
             </div>
             {% block footer %}{% endblock %}
+            {% if config('appDebug') %}
+            <div class="btn-group pull-left">
+                <span class="label label-default">Debug: on</span>
+                <span class="label label-default">Environment: {{ config('appEnv') }}</span>
+            </div>
+            {% endif %}
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
