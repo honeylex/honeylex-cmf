@@ -36,7 +36,7 @@ composer console:run hlx:fixture:import # import a default administrator account
 > - CouchDB admin at http://192.168.99.100:5984/_utils
 > - RabbitMQ admin at http://192.168.99.100:15672
 
->Login as a default administrator with email `admin@honeylex.dev` and password `admin` to access the user administration interface.
+*Login as a default administrator with email `admin@honeylex.dev` and password `admin` to access the user administration interface.*
 
 You can configure various environment files in the ```var/environment``` folder of your host machine. The `.env` and `var/docker/docker-composer.yml` files also contain additional global project environment configuration.
 
@@ -65,7 +65,7 @@ A useful set of commands are provided for managing the following system features
  - Events (managing the event store)
  - Routing
 
-## Registered silex service providers
+## Registered Silex service providers
 
 The bootstrapped Silex app is configured with the following service providers:
 
