@@ -1,4 +1,8 @@
-vendor/
-var/logs
-var/cache
-data/
+.project
+.buildpath
+.DS_Store
+.git
+*.log
+**/codecache
+vendor
+data
