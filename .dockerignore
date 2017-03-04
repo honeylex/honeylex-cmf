@@ -3,6 +3,7 @@
 .DS_Store
 .git
 *.log
+**/cache
 **/codecache
-vendor
 data
+vendor
