@@ -31,12 +31,13 @@
         ],
         "code-sniffer": "vendor/bin/phpcs --extensions=php --standard=psr2 app tests",
         "docker:up": "docker-compose up -d",
-        "docker:down": [
-            "docker-compose down",
-            "docker volume rm $(docker volume ls -qf dangling=true)"
-        ],
+        "docker:down": "docker-compose down",
         "docker:stop": "docker-compose stop",
         "docker:start": "docker-compose start",
+        "docker:prune": [
+            "docker volume rm $(docker volume ls -qf dangling=true)",
+            "docker rm $(docker ps -a -q)"
+        ],
         "console:run": "docker-compose run --rm php_cli ./bin/console --ansi"
     }
 }

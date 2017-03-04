@@ -9,7 +9,7 @@ project:
   database:
     prefix: honeylex-cmf
   email:
-    from_email: honeylex-cmf@honeylex.dev
+    from_email: honeylex@honeylex.dev
     from_name: Honeylex-CMF
   translation:
     default_locale: en

@@ -7,11 +7,9 @@ services:
       - "443:443"
     environment:
       NGINX_REDIRECT_PORT80: "true"
-
-      SERVER1SERVER_NAME: ${SERVER_HOST}
+      SERVER1SERVER_NAME: ${HOST_NAME}
       SERVER1HTTP_ENABLED: "false"
       SERVER1HTTPS_ENABLED: "true"
-      SERVER1CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=${SERVER_HOST}/L=Berlin/C=DE
       SERVER1REVERSE_PROXY_LOCATION1: /
       SERVER1REVERSE_PROXY_PASS1: http://nginx:8000
 
@@ -20,12 +18,8 @@ services:
     command: ["nginx", "-c", "/var/www/var/docker/nginx/conf/nginx.conf", "-g", "daemon off;"]
     ports:
       - "8000:8000"
-      - "8001:8001"
     links:
       - php_fpm:php_fpm
-    volumes:
-      - ../../:/var/www
-      - ../logs:/var/log/nginx
 
   php_cli:
     image: friendsofhoneybee/php:5.6-cli
@@ -34,11 +28,8 @@ services:
       - couchdb:couchdb
       - elasticsearch:elasticsearch
       - rabbitmq:rabbitmq
-    volumes:
-      - ../../:/var/www
-      - ../logs:/var/log
     environment:
-      SERVER_HOST: ${SERVER_HOST}
+      SERVER_HOST: ${HOST_NAME}
       APP_ENV: ${APP_ENV}
       APP_DEBUG: ${APP_DEBUG}
       LOCAL_CONFIG_DIR: ${LOCAL_CONFIG_DIR}
@@ -46,7 +37,7 @@ services:
 
   php_fpm:
     image: friendsofhoneybee/php:5.6-fpm
-    command: ["php-fpm", "--allow-to-run-as-root", "-y", "/var/www/var/docker/php/fpm/conf/php-fpm.d/www.conf"]
+    command: ["php-fpm", "-R", "-y", "/var/www/var/docker/php/fpm/conf/php-fpm.d/www.conf"]
     working_dir: /var/www
     ports:
       - "9000:9000"
@@ -54,11 +45,8 @@ services:
       - couchdb:couchdb
       - elasticsearch:elasticsearch
       - rabbitmq:rabbitmq
-    volumes:
-      - ../../:/var/www
-      - ../logs:/var/log
     environment:
-      SERVER_HOST: ${SERVER_HOST}
+      SERVER_HOST: ${HOST_NAME}
       APP_ENV: ${APP_ENV}
       APP_DEBUG: ${APP_DEBUG}
       LOCAL_CONFIG_DIR: ${LOCAL_CONFIG_DIR}
@@ -68,17 +56,13 @@ services:
     image: couchdb:latest
     ports:
       - "5984:5984"
-    volumes:
-      - ../../data/couchdb:/usr/local/var/lib/couchdb
 
   elasticsearch:
     image: friendsofhoneybee/elasticsearch:2.4
-    command: ["elasticsearch", "--path.conf=/usr/local/env/conf"]
+    command: ["elasticsearch", "--path.conf=/usr/local/elasticsearch/conf"]
     ports:
       - "9200:9200"
       - "9300:9300"
-    volumes:
-      - ./elasticsearch:/usr/local/env
 
   rabbitmq:
     image: friendsofhoneybee/rabbitmq:3.6-management

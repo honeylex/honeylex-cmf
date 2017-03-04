@@ -1,0 +1,28 @@
+version: '3'
+services:
+  proxy:
+    environment:
+      SERVER1CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=${HOST_NAME}/L=Berlin/C=DE
+
+  nginx:
+    volumes:
+      - ../../:/var/www
+      - ../logs:/var/log/nginx
+
+  php_cli:
+    volumes:
+      - ../../:/var/www
+      - ../logs:/var/log
+
+  php_fpm:
+    volumes:
+      - ../../:/var/www
+      - ../logs:/var/log
+
+  couchdb:
+    volumes:
+      - ../../data/couchdb:/usr/local/var/lib/couchdb
+
+  elasticsearch:
+    volumes:
+      - ./elasticsearch:/usr/local/elasticsearch

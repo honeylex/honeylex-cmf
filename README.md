@@ -42,10 +42,11 @@ You can configure various environment files in the ```var/environment``` folder 
 
 The following docker commands are available via `composer` from your host machine:
 ```shell
-composer docker:up    # bring up the containers without building
-composer docker:down  # stops and removes the project containers
-composer docker:start # start previously stopped containers
-composer docker:stop  # stop/suspend the docker containers
+composer docker:up     # bring up the containers without building
+composer docker:down   # stops and removes the project containers
+composer docker:start  # start previously stopped containers
+composer docker:stop   # stop/suspend the docker containers
+composer docker:prune  # remove dangling volumes and stopped containers
 ```
 
 ##Console
