@@ -25,9 +25,9 @@ composer docker:up
 
 Now you can run commands to setup the project:
 ```shell
-composer console:run hlx:project:configure
-composer console:run hlx:migrate:up
-composer console:run hlx:fixture:import # import a default administrator account
+composer honeylex project:configure
+composer honeylex migrate:up
+composer honeylex fixture:import # import a default administrator account
 ```
 **Once containers are running your project will be ready and provisioned!**
 >Run `docker-machine ip default` to find the IP (typically http://192.168.99.100)
@@ -42,10 +42,10 @@ You can configure various environment files in the ```var/environment``` folder 
 
 The following docker commands are available via `composer` from your host machine:
 ```shell
-composer docker:up     # bring up the containers without building
-composer docker:down   # stops and removes the project containers
+composer docker:up     # create and start containers
+composer docker:down   # stop and remove containers
 composer docker:start  # start previously stopped containers
-composer docker:stop   # stop/suspend the docker containers
+composer docker:stop   # stop/suspend running containers
 composer docker:prune  # remove dangling volumes and stopped containers
 ```
 
@@ -53,7 +53,7 @@ composer docker:prune  # remove dangling volumes and stopped containers
 
 Honeylex-CMF comes with a number of convenient tools to help project setup and maintenance. A complete list of commands can be found by running:
 ```shell
-composer console:run  # alias of docker-compose run --rm php_cli ./bin/console
+composer honeylex  # alias of docker-compose run --rm php_cli ./bin/honeylex
 ```
 
 A useful set of commands are provided for managing the following system features:

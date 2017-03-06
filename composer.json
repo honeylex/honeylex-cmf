@@ -4,12 +4,6 @@
     "keywords": [ "honeybee", "silex", "symfony", "cqrs", "es", "framework", "cmf", "cms", "event sourcing", "api", "security", "oauth" ],
     "license": "MIT",
     "type": "library",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:FriendsOfHoneybee/php-amqplib.git"
-        }
-    ],
     "require": {
         "php": ">=5.6.1",
         "honeylex/honeylex": "master@dev",
@@ -25,11 +19,8 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "scripts": {
-        "run": [
-            "echo 'Started web server on http://localhost:8888'",
-            "php -S localhost:8888 -t web web/index_dev.php"
-        ],
         "code-sniffer": "vendor/bin/phpcs --extensions=php --standard=psr2 app tests",
+        "honeylex": "docker-compose run --rm php_cli ./bin/honeylex --ansi",
         "docker:up": "docker-compose up -d",
         "docker:down": "docker-compose down",
         "docker:stop": "docker-compose stop",
@@ -37,7 +28,6 @@
         "docker:prune": [
             "docker volume rm $(docker volume ls -qf dangling=true)",
             "docker rm $(docker ps -a -q)"
-        ],
-        "console:run": "docker-compose run --rm php_cli ./bin/console --ansi"
+        ]
     }
 }
