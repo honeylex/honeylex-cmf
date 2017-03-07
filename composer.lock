@@ -753,12 +753,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeybee/honeybee.git",
-                "reference": "bedada90c92ffdc96ede6069e69c1c1c1d3c5332"
+                "reference": "a8c2106020e0ae074c5fcad54b381e38c8b2843a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/bedada90c92ffdc96ede6069e69c1c1c1d3c5332",
-                "reference": "bedada90c92ffdc96ede6069e69c1c1c1d3c5332",
+                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/a8c2106020e0ae074c5fcad54b381e38c8b2843a",
+                "reference": "a8c2106020e0ae074c5fcad54b381e38c8b2843a",
                 "shasum": ""
             },
             "require": {
@@ -842,7 +842,7 @@
                 "hexagonal",
                 "messaging"
             ],
-            "time": "2017-02-01 13:00:58"
+            "time": "2017-03-07 15:46:59"
         },
         {
             "name": "honeybee/trellis",
@@ -958,12 +958,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "3075e3c1547eade04cede9f1380cfa58d53c2c74"
+                "reference": "5b66de196d27f354b8364c782399df0bb488b972"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/3075e3c1547eade04cede9f1380cfa58d53c2c74",
-                "reference": "3075e3c1547eade04cede9f1380cfa58d53c2c74",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/5b66de196d27f354b8364c782399df0bb488b972",
+                "reference": "5b66de196d27f354b8364c782399df0bb488b972",
                 "shasum": ""
             },
             "require": {
@@ -1017,7 +1017,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2017-03-06 21:56:05"
+            "time": "2017-03-07 19:07:29"
         },
         {
             "name": "league/flysystem",

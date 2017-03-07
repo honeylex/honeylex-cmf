@@ -12,6 +12,9 @@ services:
       SERVER1HTTPS_ENABLED: "true"
       SERVER1REVERSE_PROXY_LOCATION1: /
       SERVER1REVERSE_PROXY_PASS1: http://nginx:8000
+      SERVER1REVERSE_PROXY_HEADER1FIELD1: X-Forwarded-Host ${HOST_NAME}
+      SERVER1REVERSE_PROXY_HEADER1FIELD2: X-Forwarded-Proto ${HOST_SCHEME}
+      SERVER1REVERSE_PROXY_HEADER1FIELD3: X-Forwarded-For $$proxy_add_x_forwarded_for
 
   nginx:
     image: nginx:stable
@@ -29,11 +32,13 @@ services:
       - elasticsearch:elasticsearch
       - rabbitmq:rabbitmq
     environment:
-      SERVER_HOST: ${HOST_NAME}
-      APP_ENV: ${APP_ENV}
-      APP_DEBUG: ${APP_DEBUG}
-      LOCAL_CONFIG_DIR: ${LOCAL_CONFIG_DIR}
-      PHP_INI_SCAN_DIR: ./var/docker/php/cli/conf/conf.d
+      - APP_ENV
+      - APP_DEBUG
+      - HOST_PREFIX
+      - HOST_SCHEME
+      - HOST_NAME
+      - LOCAL_CONFIG_DIR
+      - PHP_INI_SCAN_DIR=var/docker/php/cli/conf/conf.d
 
   php_fpm:
     image: friendsofhoneybee/php:5.6-fpm
@@ -46,11 +51,11 @@ services:
       - elasticsearch:elasticsearch
       - rabbitmq:rabbitmq
     environment:
-      SERVER_HOST: ${HOST_NAME}
-      APP_ENV: ${APP_ENV}
-      APP_DEBUG: ${APP_DEBUG}
-      LOCAL_CONFIG_DIR: ${LOCAL_CONFIG_DIR}
-      PHP_INI_SCAN_DIR: ./var/docker/php/fpm/conf/conf.d
+      - APP_ENV
+      - APP_DEBUG
+      - HOST_PREFIX
+      - LOCAL_CONFIG_DIR
+      - PHP_INI_SCAN_DIR=var/docker/php/fpm/conf/conf.d
 
   couchdb:
     image: couchdb:latest
@@ -70,5 +75,5 @@ services:
       - "15672:15672"
       - "5672:5672"
     environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_DEFAULT_USER
+      - RABBITMQ_DEFAULT_PASS
