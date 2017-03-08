@@ -1,4 +1,17 @@
-version: '3'
+version: "3.1"
+secrets:
+  couchdb.json:
+    file: ../secrets/default/couchdb.json
+  elasticsearch.json:
+    file: ../secrets/default/elasticsearch.json
+  rabbitmq.json:
+    file: ../secrets/default/rabbitmq.json
+  swiftmailer.json:
+    file: ../secrets/default/swiftmailer.json
+  recaptcha.json:
+    file: ../secrets/default/recaptcha.json
+  oauth.json:
+    file: ../secrets/default/oauth.json
 services:
   proxy:
     image: blacklabelops/nginx:latest
@@ -12,6 +25,7 @@ services:
       SERVER1HTTPS_ENABLED: "true"
       SERVER1REVERSE_PROXY_LOCATION1: /
       SERVER1REVERSE_PROXY_PASS1: http://nginx:8000
+      SERVER1PROXY_APPLICATION: custom
       SERVER1REVERSE_PROXY_HEADER1FIELD1: X-Forwarded-Host ${HOST_NAME}
       SERVER1REVERSE_PROXY_HEADER1FIELD2: X-Forwarded-Proto ${HOST_SCHEME}
       SERVER1REVERSE_PROXY_HEADER1FIELD3: X-Forwarded-For $$proxy_add_x_forwarded_for
@@ -31,10 +45,16 @@ services:
       - couchdb:couchdb
       - elasticsearch:elasticsearch
       - rabbitmq:rabbitmq
+    secrets:
+      - couchdb.json
+      - elasticsearch.json
+      - rabbitmq.json
+      - swiftmailer.json
+      - recaptcha.json
+      - oauth.json
     environment:
       - APP_ENV
       - APP_DEBUG
-      - HOST_PREFIX
       - HOST_SCHEME
       - HOST_NAME
       - LOCAL_CONFIG_DIR
@@ -50,10 +70,16 @@ services:
       - couchdb:couchdb
       - elasticsearch:elasticsearch
       - rabbitmq:rabbitmq
+    secrets:
+      - couchdb.json
+      - elasticsearch.json
+      - rabbitmq.json
+      - swiftmailer.json
+      - recaptcha.json
+      - oauth.json
     environment:
       - APP_ENV
       - APP_DEBUG
-      - HOST_PREFIX
       - LOCAL_CONFIG_DIR
       - PHP_INI_SCAN_DIR=var/docker/php/fpm/conf/conf.d
 

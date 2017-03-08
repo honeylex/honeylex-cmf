@@ -11,6 +11,9 @@ project:
   email:
     from_email: honeylex@honeylex.dev
     from_name: Honeylex-CMF
+  framework:
+    trusted_proxies:
+      - 0.0.0.0/0
   translation:
     default_locale: en
     locale_fallbacks:
