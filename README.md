@@ -2,7 +2,7 @@
 
 Project CMF template for building rapidly scalable applications based on the integration of the [Honeybee][Honeybee] CQRS & ES framework with the [Silex][Silex] micro framework.
 
-####Alternative Honeybee Integrations
+#### Alternative Honeybee Integrations
  - [Honeylex](https://github.com/honeylex/honeylex) (Honeylex core only)
  - [Honeyquip](https://github.com/honeyquip/honeyquip) (Honeybee + [Equip](https://github.com/equip/framework))
  - [Honeygavi](https://github.com/honeybee/honeybee-agavi-cmf-project) (Honeybee + [Agavi](https://github.com/agavi/agavi))
@@ -49,7 +49,7 @@ composer docker:stop   # stop/suspend running containers
 composer docker:prune  # remove dangling volumes and stopped containers
 ```
 
-##Console
+## Console
 
 Honeylex-CMF comes with a number of convenient tools to help project setup and maintenance. A complete list of commands can be found by running:
 ```shell
