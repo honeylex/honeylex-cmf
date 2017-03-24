@@ -3,7 +3,13 @@
     "description": "Honeybee CQRS & ES integration with the Silex framework.",
     "keywords": [ "honeybee", "silex", "symfony", "cqrs", "es", "framework", "cmf", "cms", "event sourcing", "api", "security", "oauth" ],
     "license": "MIT",
-    "type": "library",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:FriendsOfHoneybee/php-amqplib.git"
+        }
+    ],
     "require": {
         "php": ">=5.6.1",
         "honeylex/honeylex": "master@dev",

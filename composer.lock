@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a727a421f83a6e227c17ecd0642f6b96",
+    "content-hash": "bbc3d7c6a65d2dfcd238a47224c60627",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -956,12 +956,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "bd4c150629290b9cd43854d9dccbd2d2969da398"
+                "reference": "e022632120143a4dcdb017d921aed2e6c961ed89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/bd4c150629290b9cd43854d9dccbd2d2969da398",
-                "reference": "bd4c150629290b9cd43854d9dccbd2d2969da398",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/e022632120143a4dcdb017d921aed2e6c961ed89",
+                "reference": "e022632120143a4dcdb017d921aed2e6c961ed89",
                 "shasum": ""
             },
             "require": {
@@ -995,7 +995,10 @@
                 "silex/web-profiler": "~2.0",
                 "squizlabs/php_codesniffer": "~2.3"
             },
-            "type": "library",
+            "bin": [
+                "bin/honeylex"
+            ],
+            "type": "project",
             "autoload": {
                 "psr-4": {
                     "Honeybee\\FrameworkBinding\\Silex\\": "app/lib/"
@@ -1015,7 +1018,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2017-03-23 19:12:14"
+            "time": "2017-03-24 20:30:20"
         },
         {
             "name": "league/flysystem",
@@ -1475,13 +1478,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-amqplib/php-amqplib.git",
-                "reference": "2cf97f13acda9ed1a7c84db7ce2d437e294cd87c"
+                "url": "https://github.com/FriendsOfHoneybee/php-amqplib.git",
+                "reference": "06dbba0632594b9dc29d149d3ea39177d064da57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/2cf97f13acda9ed1a7c84db7ce2d437e294cd87c",
-                "reference": "2cf97f13acda9ed1a7c84db7ce2d437e294cd87c",
+                "url": "https://api.github.com/repos/FriendsOfHoneybee/php-amqplib/zipball/06dbba0632594b9dc29d149d3ea39177d064da57",
+                "reference": "06dbba0632594b9dc29d149d3ea39177d064da57",
                 "shasum": ""
             },
             "require": {
@@ -1511,7 +1514,12 @@
                     "PhpAmqpLib\\": "PhpAmqpLib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "PhpAmqpLib\\Tests\\Functional\\": "tests/Functional",
+                    "PhpAmqpLib\\Tests\\Unit\\": "tests/Unit"
+                }
+            },
             "license": [
                 "LGPL-2.1"
             ],
@@ -1538,7 +1546,10 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2017-02-19 17:20:09"
+            "support": {
+                "source": "https://github.com/FriendsOfHoneybee/php-amqplib/tree/master"
+            },
+            "time": "2017-03-10 15:51:44"
         },
         {
             "name": "pimple/pimple",
