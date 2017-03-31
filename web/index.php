@@ -2,6 +2,7 @@
 
 $appContext = 'web';
 
+$appVersion = getEnv('APP_VERSION') ?: 'master';
 $appEnv = getenv('APP_ENV') ?: 'dev';
 $appDebug = getenv('APP_DEBUG') ?: true;
 $hostPrefix = getenv('HOST_PREFIX');

@@ -5,11 +5,11 @@ use Silex\Application;
 $projectConfigDir = __DIR__.'/config';
 $application = new Application;
 $configuration = [
-    'version' => trim(file_get_contents(dirname(__DIR__).'/VERSION.txt')),
-    'hostPrefix' => $hostPrefix,
+    'appVersion' => $appVersion,
     'appContext' => $appContext,
     'appEnv' => $appEnv,
     'appDebug' => filter_var($appDebug, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE),
+    'hostPrefix' => $hostPrefix,
     'core' => [
         'config_dir' => dirname(__DIR__).'/vendor/honeylex/honeylex/app/config/default',
         'dir' => dirname(__DIR__).'/vendor/honeylex/honeylex'

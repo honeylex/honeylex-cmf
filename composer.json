@@ -1,9 +1,35 @@
 {
     "name": "honeylex/honeylex-cmf",
-    "description": "Honeybee CQRS & ES integration with the Silex framework.",
-    "keywords": [ "honeybee", "silex", "symfony", "cqrs", "es", "framework", "cmf", "cms", "event sourcing", "api", "security", "oauth" ],
-    "license": "MIT",
     "type": "project",
+    "description": "Honeybee CQRS & ES integration with the Silex framework, for CMS building.",
+    "keywords": [ "honeybee", "silex", "symfony", "cqrs", "framework", "event sourcing", "cms", "security" ],
+    "homepage": "https://github.com/honeylex/honeylex-cmf",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hasham Ahmad",
+            "email": "mr.hash@gmail.com",
+            "homepage": "https://github.com/MrHash",
+            "role": "Developer"
+        },
+        {
+            "name": "Thorsten Schmitt-Rink",
+            "email": "schmittrink@gmail.com",
+            "homepage": "https://github.com/shrink0r",
+            "role": "Developer"
+        },
+        {
+            "name": "Honeylex Contributors",
+            "homepage": "https://github.com/honeylex/honeylex/graphs/contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/honeylex/honeylex-cmf/issues",
+        "irc": "irc://irc.freenode.org/honeybee",
+        "gitter": "https://gitter.im/honeybee/Lobby"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
     "repositories": [
         {
             "type": "vcs",
@@ -11,21 +37,17 @@
         }
     ],
     "require": {
-        "php": ">=5.6.1",
-        "honeylex/honeylex": "master@dev",
-        "honeylex/hlx-security": "master@dev",
-        "pagerfanta/pagerfanta": "~1.0",
-        "roave/security-advisories": "master@dev"
+        "honeylex/hlx-security": "dev-release/0.1",
+        "honeylex/honeylex": "dev-release/0.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "~5.3",
-        "squizlabs/php_codesniffer": "~2.3",
-        "silex/web-profiler": "~2.0"
+        "phpunit/phpunit": "^5.3",
+        "silex/web-profiler": "^2.0",
+        "squizlabs/php_codesniffer": "^2.3"
     },
-    "prefer-stable": true,
-    "minimum-stability": "dev",
     "scripts": {
-        "code-sniffer": "vendor/bin/phpcs --extensions=php --standard=psr2 app tests",
+        "code-sniffer": "phpcs --extensions=php --standard=psr2 app tests",
+        "code-sniffer-autofix": "phpcbf --standard=psr2 -d tabWidth=4 src",
         "honeylex": "docker-compose run --rm php_cli ./bin/honeylex --ansi",
         "docker:up": "docker-compose up -d",
         "docker:down": "docker-compose down",

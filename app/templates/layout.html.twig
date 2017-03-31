@@ -71,7 +71,7 @@
             {% if config('appDebug') %}
             <div class="btn-group pull-left">
                 <span class="label label-default">Debug: on</span>
-                <span class="label label-default">Environment: {{ config('appEnv') }}</span>
+                <span class="label label-default">Version: {{ config('appVersion') }}@{{ config('appEnv') }}</span>
             </div>
             {% endif %}
         </footer>

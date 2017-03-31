@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbc3d7c6a65d2dfcd238a47224c60627",
+    "content-hash": "12e07fabf8dc7cb4daa9226bd5014e86",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -749,47 +749,45 @@
         },
         {
             "name": "honeybee/honeybee",
-            "version": "dev-master",
+            "version": "dev-release/0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeybee/honeybee.git",
-                "reference": "a9c6064ddc9d0074998b5def5d8e0d348594333b"
+                "reference": "62060da6833ebb8e40e64855fbfa3c1493bf3c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/a9c6064ddc9d0074998b5def5d8e0d348594333b",
-                "reference": "a9c6064ddc9d0074998b5def5d8e0d348594333b",
+                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/62060da6833ebb8e40e64855fbfa3c1493bf3c6d",
+                "reference": "62060da6833ebb8e40e64855fbfa3c1493bf3c6d",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "~2.5",
+                "beberlei/assert": "^2.5",
                 "elasticsearch/elasticsearch": "^2.0",
-                "guzzlehttp/guzzle": "~6.2",
-                "honeybee/trellis": "~0.1.0",
+                "guzzlehttp/guzzle": "^6.2",
+                "honeybee/trellis": "^0.1.1",
                 "league/flysystem": "^1.0",
                 "mtdowling/jmespath.php": "^2.0",
                 "php": ">=5.6.0",
-                "psr/log": "~1.0",
-                "ql/uri-template": "^1.0",
-                "rdlowrey/auryn": "~1.4",
+                "psr/container": "^1.0",
+                "psr/log": "^1.0",
+                "rdlowrey/auryn": "^1.4",
                 "roave/security-advisories": "master@dev",
-                "shrink0r/monatic": "~0.2.1",
-                "shrink0r/workflux": "~0.5.3",
-                "swiftmailer/swiftmailer": "~5.4",
-                "symfony/expression-language": "~2.7",
-                "symfony/filesystem": "~2.7",
-                "twig/twig": "^1.30",
-                "zendframework/zend-permissions-acl": "~2.5"
+                "shrink0r/monatic": "^0.2.1",
+                "shrink0r/workflux": "^0.5.3",
+                "symfony/expression-language": "^2.7",
+                "symfony/filesystem": "^2.7",
+                "zendframework/zend-permissions-acl": "^2.5"
             },
             "require-dev": {
                 "mockery/mockery": "master@dev",
                 "php-amqplib/php-amqplib": "master@dev",
-                "phpmd/phpmd": "~2.6",
+                "phpmd/phpmd": "^2.6",
                 "phpunit/phpunit": "^5.5",
-                "sami/sami": "~3.3",
+                "sami/sami": "^3.3",
                 "satooshi/php-coveralls": "master@dev",
-                "sebastian/phpcpd": "~2.0",
-                "squizlabs/php_codesniffer": "~2.8.1"
+                "sebastian/phpcpd": "^2.0",
+                "squizlabs/php_codesniffer": "^2.8.1"
             },
             "suggest": {
                 "cboden/Ratchet": "to handle messages over websocket",
@@ -811,16 +809,6 @@
             ],
             "authors": [
                 {
-                    "name": "Hasham Ahmad",
-                    "email": "mr.hash@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Steffen Gransow",
-                    "email": "honeybee@mivesto.de",
-                    "role": "Developer"
-                },
-                {
                     "name": "Honeybee Contributors",
                     "homepage": "https://github.com/honeybee/honeybee/graphs/contributors"
                 },
@@ -828,6 +816,18 @@
                     "name": "Thorsten Schmitt-Rink",
                     "email": "schmittrink@gmail.com",
                     "homepage": "https://github.com/shrink0r",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Hasham Ahmad",
+                    "email": "mr.hash@gmail.com",
+                    "homepage": "https://github.com/MrHash",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Steffen Gransow",
+                    "email": "honeybee@mivesto.de",
+                    "homepage": "https://github.com/graste",
                     "role": "Developer"
                 }
             ],
@@ -840,20 +840,20 @@
                 "hexagonal",
                 "messaging"
             ],
-            "time": "2017-03-21 16:31:17"
+            "time": "2017-03-31 15:26:58"
         },
         {
             "name": "honeybee/trellis",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeybee/trellis.git",
-                "reference": "5d0b053fdd8a73d2f6551543584e50c2f6101c82"
+                "reference": "184c6f053e2455707bb572385a9d8ecb6be2b655"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeybee/trellis/zipball/5d0b053fdd8a73d2f6551543584e50c2f6101c82",
-                "reference": "5d0b053fdd8a73d2f6551543584e50c2f6101c82",
+                "url": "https://api.github.com/repos/honeybee/trellis/zipball/184c6f053e2455707bb572385a9d8ecb6be2b655",
+                "reference": "184c6f053e2455707bb572385a9d8ecb6be2b655",
                 "shasum": ""
             },
             "require": {
@@ -910,32 +910,31 @@
                 "entity",
                 "validation"
             ],
-            "time": "2016-10-26T10:59:34+00:00"
+            "time": "2017-03-28T11:05:20+00:00"
         },
         {
             "name": "honeylex/hlx-security",
-            "version": "dev-master",
+            "version": "dev-release/0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/hlx-security.git",
-                "reference": "d75b448c12782157e514c08a6bd61b5a8288c83a"
+                "reference": "6ec5850ce2025be71e01ce14473fe8711a2d36a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/d75b448c12782157e514c08a6bd61b5a8288c83a",
-                "reference": "d75b448c12782157e514c08a6bd61b5a8288c83a",
+                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/6ec5850ce2025be71e01ce14473fe8711a2d36a6",
+                "reference": "6ec5850ce2025be71e01ce14473fe8711a2d36a6",
                 "shasum": ""
             },
             "require": {
-                "gigablah/silex-oauth": "~2.0@dev",
-                "google/recaptcha": "~1.1",
-                "pagerfanta/pagerfanta": "~1.0",
-                "php": ">=5.6.1",
-                "symfony/security": "~2.8|~3.1"
+                "gigablah/silex-oauth": "^2.0@dev",
+                "google/recaptcha": "^1.1",
+                "pagerfanta/pagerfanta": "^1.0",
+                "symfony/security": "^2.7|^3.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5.3",
-                "squizlabs/php_codesniffer": "~2.3"
+                "phpunit/phpunit": "^5.5",
+                "squizlabs/php_codesniffer": "^2.3"
             },
             "type": "library",
             "autoload": {
@@ -948,52 +947,49 @@
                 "MIT"
             ],
             "description": "Security & user administration crate for Honeylex.",
-            "time": "2017-03-08 19:00:57"
+            "time": "2017-03-31 15:48:34"
         },
         {
             "name": "honeylex/honeylex",
-            "version": "dev-master",
+            "version": "dev-release/0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "e022632120143a4dcdb017d921aed2e6c961ed89"
+                "reference": "31cd254bc735244b991f0a2fc5f2021d3598c96a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/e022632120143a4dcdb017d921aed2e6c961ed89",
-                "reference": "e022632120143a4dcdb017d921aed2e6c961ed89",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/31cd254bc735244b991f0a2fc5f2021d3598c96a",
+                "reference": "31cd254bc735244b991f0a2fc5f2021d3598c96a",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "~2.5",
-                "guzzlehttp/guzzle": "^6.2.1",
-                "honeybee/honeybee": "master@dev",
-                "nesbot/carbon": "~1.21",
-                "php": ">=5.6.1",
+                "honeybee/honeybee": "dev-release/0.1",
+                "nesbot/carbon": "^1.21",
                 "php-amqplib/php-amqplib": "master@dev",
-                "rdlowrey/auryn": "~1.1",
-                "roave/security-advisories": "master@dev",
-                "silex/silex": "~2.0",
-                "symfony/asset": "~2.8|~3.1",
-                "symfony/browser-kit": "~2.8|~3.1",
-                "symfony/class-loader": "~2.8|~3.1",
-                "symfony/config": "~2.8|~3.1",
-                "symfony/console": "~2.8|~3.1",
-                "symfony/css-selector": "~2.8|~3.1",
-                "symfony/finder": "~2.8|~3.1",
-                "symfony/form": "~2.8|~3.1",
-                "symfony/monolog-bridge": "~2.8|~3.1",
-                "symfony/process": "~2.8|~3.1",
-                "symfony/serializer": "~2.8|~3.1",
-                "symfony/translation": "~2.8|~3.1",
-                "symfony/twig-bridge": "~2.8|~3.1",
-                "symfony/validator": "~2.8|~3.1",
-                "willdurand/negotiation": "~2.0"
+                "silex/silex": "^2.0",
+                "swiftmailer/swiftmailer": "^5.4",
+                "symfony/asset": "^2.7|^3.1",
+                "symfony/browser-kit": "^2.7|^3.1",
+                "symfony/class-loader": "^2.7|^3.1",
+                "symfony/config": "^2.7|^3.1",
+                "symfony/console": "^2.7|^3.1",
+                "symfony/css-selector": "^2.7|^3.1",
+                "symfony/finder": "^2.7|^3.1",
+                "symfony/form": "^2.7|^3.1",
+                "symfony/monolog-bridge": "^2.7|^3.1",
+                "symfony/process": "^2.7|^3.1",
+                "symfony/serializer": "^2.7|^3.1",
+                "symfony/translation": "^2.7|^3.1",
+                "symfony/twig-bridge": "^2.7|^3.1",
+                "symfony/validator": "^2.7|^3.1",
+                "twig/twig": "^1.30",
+                "willdurand/negotiation": "^2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5.3",
-                "silex/web-profiler": "~2.0",
-                "squizlabs/php_codesniffer": "~2.3"
+                "phpunit/phpunit": "^5.5",
+                "silex/web-profiler": "^2.0",
+                "squizlabs/php_codesniffer": "^2.3"
             },
             "bin": [
                 "bin/honeylex"
@@ -1008,17 +1004,35 @@
             "license": [
                 "MIT"
             ],
+            "authors": [
+                {
+                    "name": "Thorsten Schmitt-Rink",
+                    "email": "schmittrink@gmail.com",
+                    "homepage": "https://github.com/shrink0r",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Hasham Ahmad",
+                    "email": "mr.hash@gmail.com",
+                    "homepage": "https://github.com/MrHash",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Honeylex Contributors",
+                    "homepage": "https://github.com/honeylex/honeylex/graphs/contributors"
+                }
+            ],
             "description": "Honeybee CQRS & ES integration with the Silex framework.",
+            "homepage": "https://github.com/honeylex/honeylex",
             "keywords": [
                 "cqrs",
-                "es",
                 "event sourcing",
                 "framework",
                 "honeybee",
                 "silex",
                 "symfony"
             ],
-            "time": "2017-03-24 20:30:20"
+            "time": "2017-03-31 15:47:01"
         },
         {
             "name": "league/flysystem",
@@ -1105,16 +1119,16 @@
         },
         {
             "name": "lusitanian/oauth",
-            "version": "v0.8.9",
+            "version": "v0.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
-                "reference": "29bda6e176df6c292a9b1c43ae8a44d56a87c30b"
+                "reference": "09f4af38f17db6938253f4d1b171d537913ac1ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/29bda6e176df6c292a9b1c43ae8a44d56a87c30b",
-                "reference": "29bda6e176df6c292a9b1c43ae8a44d56a87c30b",
+                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/09f4af38f17db6938253f4d1b171d537913ac1ed",
+                "reference": "09f4af38f17db6938253f4d1b171d537913ac1ed",
                 "shasum": ""
             },
             "require": {
@@ -1168,7 +1182,7 @@
                 "oauth",
                 "security"
             ],
-            "time": "2016-02-24T00:20:18+00:00"
+            "time": "2016-07-12T22:15:40+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1598,6 +1612,55 @@
             "time": "2015-09-11T15:10:35+00:00"
         },
         {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -1695,68 +1758,17 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
-            "name": "ql/uri-template",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/QuickenLoans/uri-template.git",
-                "reference": "7506914fbbf6f74b85da69541d39d16a1a1fd533"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/QuickenLoans/uri-template/zipball/7506914fbbf6f74b85da69541d39d16a1a1fd533",
-                "reference": "7506914fbbf6f74b85da69541d39d16a1a1fd533",
-                "shasum": ""
-            },
-            "require": {
-                "ext-ctype": "*",
-                "ext-mbstring": "*",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/php-invoker": "*",
-                "phpunit/phpunit": "^5.7",
-                "satooshi/php-coveralls": "dev-master@dev"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "QL\\UriTemplate\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matt Nagi",
-                    "email": "mattnagi@quickenloans.com"
-                }
-            ],
-            "description": "An implementation of RFC 6570 level 4",
-            "homepage": "https://github.com/QuickenLoans/uri-template",
-            "keywords": [
-                "URI Template",
-                "rfc6570",
-                "template",
-                "uri",
-                "url"
-            ],
-            "time": "2017-02-09T19:09:39+00:00"
-        },
-        {
             "name": "ramsey/uuid",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458"
+                "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/0b7bdfb180e72c8d76e75a649ced67e392201458",
-                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
+                "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
                 "shasum": ""
             },
             "require": {
@@ -1768,9 +1780,9 @@
             },
             "require-dev": {
                 "apigen/apigen": "^4.1",
-                "codeception/aspect-mock": "1.0.0",
+                "codeception/aspect-mock": "^1.0 | ^2.0",
                 "doctrine/annotations": "~1.2.0",
-                "goaop/framework": "1.0.0-alpha.2",
+                "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
                 "ircmaxell/random-lib": "^1.1",
                 "jakub-onderka/php-parallel-lint": "^0.9.0",
                 "mockery/mockery": "^0.9.4",
@@ -1825,7 +1837,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2017-03-18T15:38:09+00:00"
+            "time": "2017-03-26T20:37:53+00:00"
         },
         {
             "name": "rdlowrey/auryn",
@@ -1890,20 +1902,23 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "2760f3898b7e931aa71153852dcd48a75c9b95db"
+                "reference": "62785ae604c8d69725d693eb370e1d67e94c4053"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/2760f3898b7e931aa71153852dcd48a75c9b95db",
-                "reference": "2760f3898b7e931aa71153852dcd48a75c9b95db",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/62785ae604c8d69725d693eb370e1d67e94c4053",
+                "reference": "62785ae604c8d69725d693eb370e1d67e94c4053",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
             },
             "type": "library",
             "autoload": {
@@ -1929,7 +1944,7 @@
                 "promise",
                 "promises"
             ],
-            "time": "2016-12-22T14:09:01+00:00"
+            "time": "2017-03-25T12:08:31+00:00"
         },
         {
             "name": "roave/security-advisories",
@@ -1937,12 +1952,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "66f7b04100fb2a7bdeaaddf02579189e15835056"
+                "reference": "1196fb8f4bf78e53204838bbdda6f10547541f12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/66f7b04100fb2a7bdeaaddf02579189e15835056",
-                "reference": "66f7b04100fb2a7bdeaaddf02579189e15835056",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1196fb8f4bf78e53204838bbdda6f10547541f12",
+                "reference": "1196fb8f4bf78e53204838bbdda6f10547541f12",
                 "shasum": ""
             },
             "conflict": {
@@ -1995,7 +2010,7 @@
                 "silverstripe/framework": ">=3,<3.3",
                 "silverstripe/userforms": "<3",
                 "simplesamlphp/saml2": "<1.8.1|>=1.9,<1.9.1|>=1.10,<1.10.3|>=2,<2.3.3",
-                "simplesamlphp/simplesamlphp": "<1.14.11",
+                "simplesamlphp/simplesamlphp": "<1.14.12",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "socalnick/scn-social-auth": "<1.15.2",
                 "squizlabs/php_codesniffer": ">=1,<2.8.1",
@@ -2064,7 +2079,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2017-03-16T14:24:35+00:00"
+            "time": "2017-03-31T06:31:44+00:00"
         },
         {
             "name": "shrink0r/monatic",
@@ -6068,14 +6083,11 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "honeylex/honeylex": 20,
         "honeylex/hlx-security": 20,
-        "roave/security-advisories": 20
+        "honeylex/honeylex": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=5.6.1"
-    },
+    "platform": [],
     "platform-dev": []
 }

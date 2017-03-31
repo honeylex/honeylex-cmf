@@ -9,7 +9,7 @@ Hlx\Security\SecurityCrate:
     auto_login:
       enabled: true
       firewall: default
-      target_path: /
+      target_path: home
     oauth:
       facebook:
         enabled: false
