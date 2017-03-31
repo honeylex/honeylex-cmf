@@ -53,6 +53,7 @@ services:
       - recaptcha.json
       - oauth.json
     environment:
+      - APP_VERSION
       - APP_ENV
       - APP_DEBUG
       - HOST_SCHEME
@@ -78,6 +79,7 @@ services:
       - recaptcha.json
       - oauth.json
     environment:
+      - APP_VERSION
       - APP_ENV
       - APP_DEBUG
       - LOCAL_CONFIG_DIR
