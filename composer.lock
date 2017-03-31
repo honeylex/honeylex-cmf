@@ -918,12 +918,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/hlx-security.git",
-                "reference": "6ec5850ce2025be71e01ce14473fe8711a2d36a6"
+                "reference": "3768c731bbd14171fe81961612c263f60e7abf2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/6ec5850ce2025be71e01ce14473fe8711a2d36a6",
-                "reference": "6ec5850ce2025be71e01ce14473fe8711a2d36a6",
+                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/3768c731bbd14171fe81961612c263f60e7abf2a",
+                "reference": "3768c731bbd14171fe81961612c263f60e7abf2a",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +947,7 @@
                 "MIT"
             ],
             "description": "Security & user administration crate for Honeylex.",
-            "time": "2017-03-31 15:48:34"
+            "time": "2017-03-31 17:02:29"
         },
         {
             "name": "honeylex/honeylex",
@@ -955,12 +955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "6d7678ba7279385281512c8a696efe43a1e0e178"
+                "reference": "5d5c7656d60d55c7ae0fe29a5cb89ea4dba9e5f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/6d7678ba7279385281512c8a696efe43a1e0e178",
-                "reference": "6d7678ba7279385281512c8a696efe43a1e0e178",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/5d5c7656d60d55c7ae0fe29a5cb89ea4dba9e5f1",
+                "reference": "5d5c7656d60d55c7ae0fe29a5cb89ea4dba9e5f1",
                 "shasum": ""
             },
             "require": {
@@ -997,7 +997,7 @@
             "type": "project",
             "autoload": {
                 "psr-4": {
-                    "Honeybee\\FrameworkBinding\\Silex\\": "app/lib/"
+                    "Honeylex\\": "app/lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1032,7 +1032,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2017-03-31 16:06:33"
+            "time": "2017-03-31 16:55:12"
         },
         {
             "name": "league/flysystem",

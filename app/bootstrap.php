@@ -28,7 +28,7 @@ if (is_readable($customContextBootstrap)) {
 }
 
 // default bootstrap attempt
-$bootstrapClass = 'Honeybee\\FrameworkBinding\\Silex\\Bootstrap\\'.ucfirst($appContext).'Bootstrap';
+$bootstrapClass = 'Honeylex\\Bootstrap\\'.ucfirst($appContext).'Bootstrap';
 $bootstrap = new $bootstrapClass;
 $app = $bootstrap($application, $configuration);
 
