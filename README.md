@@ -32,13 +32,13 @@ composer honeylex fixture:import # import a default administrator account
 **Once containers are running your project will be ready and provisioned!**
 >Run `docker-machine ip default` to find the IP (typically http://192.168.99.100)
 > - Secure site https://192.168.99.100 (untrusted certs in dev mode)
-> - Elasticsearch at http://192.168.99.100:9200
+> - Elasticsearch admin at http://192.168.99.100:9100
 > - CouchDB admin at http://192.168.99.100:5984/_utils
 > - RabbitMQ admin at http://192.168.99.100:15672
 
 *Login as a default administrator with email `admin@honeylex.dev` and password `admin` to access the user administration interface.*
 
-You can configure various environment files in the ```var/environment``` folder of your host machine. The `.env` and `var/docker/docker-composer.yml` files also contain additional global project environment configuration.
+You can add application secrets in the ```var/secrets``` folder of your docker machine. The `.env` and `var/docker/docker-compose.yml` files also contain additional global project environment and secrets configuration.
 
 The following docker commands are available via `composer` from your host machine:
 ```shell
@@ -68,7 +68,7 @@ A useful set of commands are provided for managing the following system features
 
 ## Registered Silex service providers
 
-The bootstrapped Silex app is configured with the following service providers:
+The bootstrapped Silex app is configured with support for the following service providers:
 
 * [AssetServiceProvider][AssetServiceProvider]
 * [FormServiceProvider][FormServiceProvider]
@@ -76,21 +76,25 @@ The bootstrapped Silex app is configured with the following service providers:
 * [MonologServiceProvider][MonologServiceProvider]
 * [SessionServiceProvider][SessionServiceProvider]
 * [ServiceControllerServiceProvider][ServiceControllerServiceProvider]
+* [SwiftmailerServiceProvider][SwiftmailerServiceProvider]
 * [TranslationServiceProvider][TranslationServiceProvider]
 * [TwigServiceProvider][TwigServiceProvider]
 * [UrlGeneratorServiceProvider][UrlGeneratorServiceProvider]
 * [ValidatorServiceProvider][ValidatorServiceProvider]
 * [WebProfilerServiceProvider][WebProfilerServiceProvider]
-* [SwiftmailerServiceProvider][SwiftmailerServiceProvider]
+
+Additional security services are provided in [Hlx\Security](https://github.com/honeylex/hlx-security) crate:
+
+* [RememberMeServiceProvider][RememberMeServiceProvider]
+* [SecurityServiceProvider][SecurityServiceProvider]
 
 Read the [Providers][Providers] documentation for more details about Silex Service Providers.
 
 ## Questions?
 
 Join us in building awesome scalable applications or ask questions here:
- - IRC [freenode #honeybee](http://webchat.freenode.net?randomnick=1&channels=%23honeybee&uio=d4)
  - Gitter [honeybee #Lobby](https://gitter.im/honeybee/Lobby)
- - Slack [honeybee-cmf #development](https://honeybee-cmf.slack.com/messages/development)
+ - IRC [freenode #honeybee](http://webchat.freenode.net?randomnick=1&channels=%23honeybee&uio=d4)
 
 [AssetServiceProvider]: http://silex.sensiolabs.org/doc/providers/asset.html
 [Composer]: http://getcomposer.org/
@@ -100,6 +104,8 @@ Join us in building awesome scalable applications or ask questions here:
 [LocaleServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/locale.html
 [MonologServiceProvider]: http://silex.sensiolabs.org/doc/providers/monolog.html
 [Providers]: http://silex.sensiolabs.org/doc/providers.html
+[RememberMeServiceProvider]: http://silex.sensiolabs.org/doc/2.0/providers/remember_me.html
+[SecurityServiceProvider]: http://silex.sensiolabs.org/doc/providers/security.html
 [SessionServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/session.html
 [ServiceControllerServiceProvider]: http://silex.sensiolabs.org/doc/providers/service_controller.html
 [Silex]: http://silex.sensiolabs.org/documentation
