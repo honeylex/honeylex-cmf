@@ -117,24 +117,29 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "1.2.14",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "5642614492f0ca2064c01d60cc33284cc2f731a9"
+                "reference": "bc31baa11ea2883e017f0a10d9722ef9d50eac1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5642614492f0ca2064c01d60cc33284cc2f731a9",
-                "reference": "5642614492f0ca2064c01d60cc33284cc2f731a9",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/bc31baa11ea2883e017f0a10d9722ef9d50eac1c",
+                "reference": "bc31baa11ea2883e017f0a10d9722ef9d50eac1c",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "^1.0.1",
-                "php": ">= 5.3.3"
+                "php": ">= 5.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.24"
+                "dominicsayers/isemail": "dev-master",
+                "phpunit/phpunit": "^4.8.0",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "suggest": {
+                "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
             },
             "type": "library",
             "extra": {
@@ -143,8 +148,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Egulias\\": "src/"
+                "psr-4": {
+                    "Egulias\\EmailValidator\\": "EmailValidator"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -156,7 +161,7 @@
                     "name": "Eduardo Gulias Davis"
                 }
             ],
-            "description": "A library for validating emails",
+            "description": "A library for validating emails against several RFCs",
             "homepage": "https://github.com/egulias/EmailValidator",
             "keywords": [
                 "email",
@@ -165,7 +170,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2017-02-03T22:48:59+00:00"
+            "time": "2017-01-30T22:07:36+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -749,45 +754,44 @@
         },
         {
             "name": "honeybee/honeybee",
-            "version": "0.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeybee/honeybee.git",
-                "reference": "cebb6f3f4b39c56f545b8d35ec967c963d55b1c3"
+                "reference": "04b0cfa778c7a729a4aac326f3f6839b6fc94d5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/cebb6f3f4b39c56f545b8d35ec967c963d55b1c3",
-                "reference": "cebb6f3f4b39c56f545b8d35ec967c963d55b1c3",
+                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/04b0cfa778c7a729a4aac326f3f6839b6fc94d5f",
+                "reference": "04b0cfa778c7a729a4aac326f3f6839b6fc94d5f",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^2.5",
+                "beberlei/assert": "^2.7",
                 "elasticsearch/elasticsearch": "^2.0",
                 "guzzlehttp/guzzle": "^6.2",
-                "honeybee/trellis": "^0.1.1",
+                "honeybee/trellis": "^0.1.3",
                 "league/flysystem": "^1.0",
-                "mtdowling/jmespath.php": "^2.0",
+                "mtdowling/jmespath.php": "^2.4",
                 "php": ">=5.6.0",
                 "psr/container": "^1.0",
                 "psr/log": "^1.0",
                 "rdlowrey/auryn": "^1.4",
                 "roave/security-advisories": "master@dev",
                 "shrink0r/monatic": "^0.2.1",
-                "shrink0r/workflux": "^0.5.3",
-                "symfony/expression-language": "^2.7",
-                "symfony/filesystem": "^2.7",
-                "zendframework/zend-permissions-acl": "^2.5"
+                "shrink0r/workflux": "^0.5.5",
+                "symfony/expression-language": "^3.2",
+                "symfony/filesystem": "^3.2",
+                "zendframework/zend-permissions-acl": "^2.6"
             },
             "require-dev": {
                 "mockery/mockery": "master@dev",
                 "php-amqplib/php-amqplib": "master@dev",
                 "phpmd/phpmd": "^2.6",
-                "phpunit/phpunit": "^5.5",
-                "sami/sami": "^3.3",
+                "phpunit/phpunit": "^5.7",
                 "satooshi/php-coveralls": "master@dev",
-                "sebastian/phpcpd": "^2.0",
-                "squizlabs/php_codesniffer": "^2.8.1"
+                "sebastian/phpcpd": "^3.0",
+                "squizlabs/php_codesniffer": "^2.8"
             },
             "suggest": {
                 "cboden/Ratchet": "to handle messages over websocket",
@@ -840,41 +844,40 @@
                 "hexagonal",
                 "messaging"
             ],
-            "time": "2017-03-31T19:56:08+00:00"
+            "time": "2017-04-02T19:56:39+00:00"
         },
         {
             "name": "honeybee/trellis",
-            "version": "0.1.1",
+            "version": "0.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeybee/trellis.git",
-                "reference": "184c6f053e2455707bb572385a9d8ecb6be2b655"
+                "reference": "76759e805be70bcde814901030a4173061b5e5c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeybee/trellis/zipball/184c6f053e2455707bb572385a9d8ecb6be2b655",
-                "reference": "184c6f053e2455707bb572385a9d8ecb6be2b655",
+                "url": "https://api.github.com/repos/honeybee/trellis/zipball/76759e805be70bcde814901030a4173061b5e5c0",
+                "reference": "76759e805be70bcde814901030a4173061b5e5c0",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^2.5",
-                "egulias/email-validator": "~1.2",
-                "fzaninotto/faker": "~1.5",
-                "mtdowling/jmespath.php": "~2.2",
+                "beberlei/assert": "^2.7",
+                "egulias/email-validator": "^2.1",
+                "fzaninotto/faker": "^1.6",
+                "mtdowling/jmespath.php": "^2.4",
                 "php": ">=5.6.0",
-                "ramsey/uuid": "^3.1",
+                "ramsey/uuid": "^3.6",
                 "roave/security-advisories": "master@dev",
-                "symfony/console": "~2.8|~3.1",
-                "symfony/filesystem": "~2.8|~3.1",
-                "twig/twig": "~1.23"
+                "symfony/console": "^3.2",
+                "symfony/filesystem": "^3.2",
+                "twig/twig": "^1.3"
             },
             "require-dev": {
-                "mockery/mockery": "master@dev",
-                "phpmd/phpmd": "~2.3",
-                "phpunit/phpunit": "~5.0",
-                "sami/sami": "~3.2",
+                "mockery/mockery": "^0.9",
+                "phpmd/phpmd": "^2.6",
+                "phpunit/phpunit": "^5.7",
                 "satooshi/php-coveralls": "master@dev",
-                "squizlabs/php_codesniffer": "~2.3"
+                "squizlabs/php_codesniffer": "^2.8"
             },
             "bin": [
                 "bin/trellis"
@@ -887,20 +890,35 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "MPL-2.0"
             ],
             "authors": [
                 {
-                    "name": "Thorsten Schmitt-Rink"
+                    "name": "Honeybee Contributors",
+                    "homepage": "https://github.com/honeybee/honeybee/graphs/contributors"
                 },
                 {
-                    "name": "Steffen Gransow"
+                    "name": "Thorsten Schmitt-Rink",
+                    "email": "schmittrink@gmail.com",
+                    "homepage": "https://github.com/shrink0r",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Igor Pellegrini"
+                    "name": "Hasham Ahmad",
+                    "email": "mr.hash@gmail.com",
+                    "homepage": "https://github.com/MrHash",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Hasham Ahmad"
+                    "name": "Steffen Gransow",
+                    "email": "honeybee@mivesto.de",
+                    "homepage": "https://github.com/graste",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Igor Pellegrini",
+                    "homepage": "https://github.com/Pictor13",
+                    "role": "Developer"
                 }
             ],
             "description": "Library for generating entities, that enforce data validity according to a specific schema.",
@@ -910,7 +928,7 @@
                 "entity",
                 "validation"
             ],
-            "time": "2017-03-28T11:05:20+00:00"
+            "time": "2017-04-02T17:50:50+00:00"
         },
         {
             "name": "honeylex/hlx-security",
@@ -918,12 +936,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/hlx-security.git",
-                "reference": "e769c849cbd1680c314ddddcfe4585096b17408d"
+                "reference": "1e454ce30595a90f1394eabddd8ace82375676e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/e769c849cbd1680c314ddddcfe4585096b17408d",
-                "reference": "e769c849cbd1680c314ddddcfe4585096b17408d",
+                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/1e454ce30595a90f1394eabddd8ace82375676e2",
+                "reference": "1e454ce30595a90f1394eabddd8ace82375676e2",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +965,7 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Honeylex.",
-            "time": "2017-04-02 14:26:24"
+            "time": "2017-04-02 15:00:43"
         },
         {
             "name": "honeylex/honeylex",
@@ -955,12 +973,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "3f59b1b88d8b2e04e2e8d265fa64013e404f1066"
+                "reference": "87c093d106f9b666e0a39f5354af973facb5c343"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/3f59b1b88d8b2e04e2e8d265fa64013e404f1066",
-                "reference": "3f59b1b88d8b2e04e2e8d265fa64013e404f1066",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/87c093d106f9b666e0a39f5354af973facb5c343",
+                "reference": "87c093d106f9b666e0a39f5354af973facb5c343",
                 "shasum": ""
             },
             "require": {
@@ -970,20 +988,20 @@
                 "roave/security-advisories": "master@dev",
                 "silex/silex": "^2.0",
                 "swiftmailer/swiftmailer": "^5.4",
-                "symfony/asset": "^2.7|^3.1",
-                "symfony/browser-kit": "^2.7|^3.1",
-                "symfony/class-loader": "^2.7|^3.1",
-                "symfony/config": "^2.7|^3.1",
-                "symfony/console": "^2.7|^3.1",
-                "symfony/css-selector": "^2.7|^3.1",
-                "symfony/finder": "^2.7|^3.1",
-                "symfony/form": "^2.7|^3.1",
-                "symfony/monolog-bridge": "^2.7|^3.1",
-                "symfony/process": "^2.7|^3.1",
-                "symfony/serializer": "^2.7|^3.1",
-                "symfony/translation": "^2.7|^3.1",
-                "symfony/twig-bridge": "^2.7|^3.1",
-                "symfony/validator": "^2.7|^3.1",
+                "symfony/asset": "^3.2",
+                "symfony/browser-kit": "^3.2",
+                "symfony/class-loader": "^3.2",
+                "symfony/config": "^3.2",
+                "symfony/console": "^3.2",
+                "symfony/css-selector": "^3.2",
+                "symfony/finder": "^3.2",
+                "symfony/form": "^3.2",
+                "symfony/monolog-bridge": "^3.2",
+                "symfony/process": "^3.2",
+                "symfony/serializer": "^3.2",
+                "symfony/translation": "^3.2",
+                "symfony/twig-bridge": "^3.2",
+                "symfony/validator": "^3.2",
                 "twig/twig": "^1.30",
                 "willdurand/negotiation": "^2.0"
             },
@@ -1033,7 +1051,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2017-04-02 14:23:11"
+            "time": "2017-04-02 20:15:24"
         },
         {
             "name": "league/flysystem",
@@ -1613,6 +1631,52 @@
             "time": "2015-09-11T15:10:35+00:00"
         },
         {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "time": "2016-08-06T20:24:11+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "1.0.0",
             "source": {
@@ -2129,30 +2193,28 @@
         },
         {
             "name": "shrink0r/workflux",
-            "version": "0.5.3",
+            "version": "0.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrink0r/workflux.git",
-                "reference": "8f6fdbba22c07395b8c82d920f39d298c86175a1"
+                "reference": "a27412bcc8fe3d850efec3aa408de2acf8bbde05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrink0r/workflux/zipball/8f6fdbba22c07395b8c82d920f39d298c86175a1",
-                "reference": "8f6fdbba22c07395b8c82d920f39d298c86175a1",
+                "url": "https://api.github.com/repos/shrink0r/workflux/zipball/a27412bcc8fe3d850efec3aa408de2acf8bbde05",
+                "reference": "a27412bcc8fe3d850efec3aa408de2acf8bbde05",
                 "shasum": ""
             },
             "require": {
                 "evenement/evenement": "~2.0",
                 "graste/params": ">=2.1.0 <=4.0.0",
-                "php": ">=5.5.0",
-                "symfony/expression-language": "~2.5"
+                "php": ">=5.6.0",
+                "symfony/expression-language": "~3.2"
             },
             "require-dev": {
-                "phine/sami-github": "^1.0.4",
-                "phpunit/phpunit": "5.0.*",
-                "sami/sami": "^3.0.0",
-                "satooshi/php-coveralls": "0.6.*",
-                "squizlabs/php_codesniffer": "2.3.*"
+                "phpunit/phpunit": "~5.7",
+                "satooshi/php-coveralls": "~1.0",
+                "squizlabs/php_codesniffer": "~2.8"
             },
             "type": "library",
             "autoload": {
@@ -2179,7 +2241,7 @@
                 "workflow",
                 "workflux"
             ],
-            "time": "2016-10-27T14:28:02+00:00"
+            "time": "2017-03-31T22:39:47+00:00"
         },
         {
             "name": "silex/silex",
@@ -2431,6 +2493,73 @@
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
             "time": "2017-02-21T09:12:04+00:00"
+        },
+        {
+            "name": "symfony/cache",
+            "version": "v3.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/cache.git",
+                "reference": "38ead350d7c27b08b8da9401cbdbea8121f929a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/38ead350d7c27b08b8da9401cbdbea8121f929a4",
+                "reference": "38ead350d7c27b08b8da9401cbdbea8121f929a4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "psr/cache": "~1.0",
+                "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/cache-implementation": "1.0"
+            },
+            "require-dev": {
+                "cache/integration-tests": "dev-master",
+                "doctrine/cache": "~1.6",
+                "doctrine/dbal": "~2.4",
+                "predis/predis": "~1.0"
+            },
+            "suggest": {
+                "symfony/polyfill-apcu": "For using ApcuAdapter on HHVM"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Cache\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony implementation of PSR-6",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "caching",
+                "psr6"
+            ],
+            "time": "2017-03-08T12:16:26+00:00"
         },
         {
             "name": "symfony/class-loader",
@@ -2835,25 +2964,26 @@
         },
         {
             "name": "symfony/expression-language",
-            "version": "v2.8.18",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/expression-language.git",
-                "reference": "3d63ca2b4ccf670726f10764a9db4553b97fe136"
+                "reference": "8f7d3a35015831dc661713f403b0a0dd34a51baf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/expression-language/zipball/3d63ca2b4ccf670726f10764a9db4553b97fe136",
-                "reference": "3d63ca2b4ccf670726f10764a9db4553b97fe136",
+                "url": "https://api.github.com/repos/symfony/expression-language/zipball/8f7d3a35015831dc661713f403b0a0dd34a51baf",
+                "reference": "8f7d3a35015831dc661713f403b0a0dd34a51baf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9",
+                "symfony/cache": "~3.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -2880,29 +3010,29 @@
             ],
             "description": "Symfony ExpressionLanguage Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-24T13:57:05+00:00"
+            "time": "2017-02-24T13:58:52+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.8.18",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "e542d4765092d22552b1bf01ddccfb01d98ee325"
+                "reference": "bc0f17bed914df2cceb989972c3b996043c4da4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/e542d4765092d22552b1bf01ddccfb01d98ee325",
-                "reference": "e542d4765092d22552b1bf01ddccfb01d98ee325",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/bc0f17bed914df2cceb989972c3b996043c4da4a",
+                "reference": "bc0f17bed914df2cceb989972c3b996043c4da4a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -2929,7 +3059,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-18T17:06:33+00:00"
+            "time": "2017-03-06T19:30:27+00:00"
         },
         {
             "name": "symfony/finder",
@@ -5009,16 +5139,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.17",
+            "version": "5.7.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf"
+                "reference": "c6884c0d4b8a7277de7ae3c9e597aff138c6365f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/68752b665d3875f9a38a357e3ecb35c79f8673bf",
-                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c6884c0d4b8a7277de7ae3c9e597aff138c6365f",
+                "reference": "c6884c0d4b8a7277de7ae3c9e597aff138c6365f",
                 "shasum": ""
             },
             "require": {
@@ -5087,7 +5217,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-19T16:52:12+00:00"
+            "time": "2017-04-02T15:44:48+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

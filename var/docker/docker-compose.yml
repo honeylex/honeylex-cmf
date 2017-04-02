@@ -96,7 +96,7 @@ services:
       - PHP_INI_SCAN_DIR=var/docker/php/fpm/conf/conf.d
 
   couchdb:
-    image: couchdb:latest
+    image: couchdb:1
     ports:
       - "5984:5984"
 
