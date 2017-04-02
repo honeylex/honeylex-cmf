@@ -1,6 +1,6 @@
 # Honeylex CMF
 
-Project CMF template for building rapidly scalable applications based on the integration of the [Honeybee][Honeybee] CQRS & ES framework with the [Silex][Silex] micro framework.
+Project CMF template for building rapidly scalable applications based on the integration of the [Honeybee][Honeybee] CQRS & ES framework with the [Silex][Silex] micro framework based on Symfony components.
 
 #### Alternative Honeybee Integrations
  - [Honeylex](https://github.com/honeylex/honeylex) (Honeylex core only)
@@ -74,6 +74,7 @@ The bootstrapped Silex app is configured with support for the following service 
 * [FormServiceProvider][FormServiceProvider]
 * [LocaleServiceProvider][LocaleServiceProvider]
 * [MonologServiceProvider][MonologServiceProvider]
+* [SerializerServiceProvider][SerializerServiceProvider]
 * [SessionServiceProvider][SessionServiceProvider]
 * [ServiceControllerServiceProvider][ServiceControllerServiceProvider]
 * [SwiftmailerServiceProvider][SwiftmailerServiceProvider]
@@ -83,7 +84,7 @@ The bootstrapped Silex app is configured with support for the following service 
 * [ValidatorServiceProvider][ValidatorServiceProvider]
 * [WebProfilerServiceProvider][WebProfilerServiceProvider]
 
-Additional security services are provided in [Hlx\Security](https://github.com/honeylex/hlx-security) crate:
+Additional security services are provided in the included [Hlx\Security](https://github.com/honeylex/hlx-security) crate:
 
 * [RememberMeServiceProvider][RememberMeServiceProvider]
 * [SecurityServiceProvider][SecurityServiceProvider]
@@ -106,6 +107,7 @@ Join us in building awesome scalable applications or ask questions here:
 [Providers]: http://silex.sensiolabs.org/doc/providers.html
 [RememberMeServiceProvider]: http://silex.sensiolabs.org/doc/2.0/providers/remember_me.html
 [SecurityServiceProvider]: http://silex.sensiolabs.org/doc/providers/security.html
+[SerializerServiceProvider]: http://silex.sensiolabs.org/doc/2.0/providers/serializer.html
 [SessionServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/session.html
 [ServiceControllerServiceProvider]: http://silex.sensiolabs.org/doc/providers/service_controller.html
 [Silex]: http://silex.sensiolabs.org/documentation
