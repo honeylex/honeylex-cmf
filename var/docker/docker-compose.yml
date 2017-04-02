@@ -29,12 +29,22 @@ services:
       SERVER1REVERSE_PROXY_HEADER1FIELD1: X-Forwarded-Host ${HOST_NAME}
       SERVER1REVERSE_PROXY_HEADER1FIELD2: X-Forwarded-Proto ${HOST_SCHEME}
       SERVER1REVERSE_PROXY_HEADER1FIELD3: X-Forwarded-For $$proxy_add_x_forwarded_for
+      SERVER2SERVER_NAME: api.${HOST_NAME}
+      SERVER2HTTP_ENABLED: "false"
+      SERVER2HTTPS_ENABLED: "true"
+      SERVER2REVERSE_PROXY_LOCATION1: /
+      SERVER2REVERSE_PROXY_PASS1: http://nginx:8001
+      SERVER2PROXY_APPLICATION: custom
+      SERVER2REVERSE_PROXY_HEADER1FIELD1: X-Forwarded-Host ${HOST_NAME}
+      SERVER2REVERSE_PROXY_HEADER1FIELD2: X-Forwarded-Proto ${HOST_SCHEME}
+      SERVER2REVERSE_PROXY_HEADER1FIELD3: X-Forwarded-For $$proxy_add_x_forwarded_for
 
   nginx:
     image: nginx:stable
     command: ["nginx", "-c", "/var/www/var/docker/nginx/conf/nginx.conf", "-g", "daemon off;"]
     ports:
       - "8000:8000"
+      - "8001:8001"
     links:
       - php_fpm:php_fpm
 

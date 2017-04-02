@@ -3,6 +3,7 @@ services:
   proxy:
     environment:
       SERVER1CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=${HOST_NAME}/L=Berlin/C=DE
+      SERVER2CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=api.${HOST_NAME}/L=Berlin/C=DE
 
   nginx:
     volumes:

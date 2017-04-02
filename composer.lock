@@ -918,12 +918,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/hlx-security.git",
-                "reference": "620c03c64fdc78c40a28a4bf458069eef5171d87"
+                "reference": "e769c849cbd1680c314ddddcfe4585096b17408d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/620c03c64fdc78c40a28a4bf458069eef5171d87",
-                "reference": "620c03c64fdc78c40a28a4bf458069eef5171d87",
+                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/e769c849cbd1680c314ddddcfe4585096b17408d",
+                "reference": "e769c849cbd1680c314ddddcfe4585096b17408d",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +947,7 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Honeylex.",
-            "time": "2017-04-02 12:13:09"
+            "time": "2017-04-02 14:26:24"
         },
         {
             "name": "honeylex/honeylex",
@@ -955,12 +955,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "3b7291932bb35b10bd6a0f50cac808a1d76a79cd"
+                "reference": "3f59b1b88d8b2e04e2e8d265fa64013e404f1066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/3b7291932bb35b10bd6a0f50cac808a1d76a79cd",
-                "reference": "3b7291932bb35b10bd6a0f50cac808a1d76a79cd",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/3f59b1b88d8b2e04e2e8d265fa64013e404f1066",
+                "reference": "3f59b1b88d8b2e04e2e8d265fa64013e404f1066",
                 "shasum": ""
             },
             "require": {
@@ -1033,7 +1033,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2017-04-02 12:17:53"
+            "time": "2017-04-02 14:23:11"
         },
         {
             "name": "league/flysystem",
