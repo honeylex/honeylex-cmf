@@ -21,12 +21,15 @@ Hlx\Security\SecurityCrate:
           firstname: first_name
           lastname: last_name
     authenticators:
-      hlx.security.form_login_authenticator: Hlx\Security\Authenticator\FormLoginAuthenticator
+      hlx.security.form_login_authenticator: Hlx\Security\Authentication\FormLoginAuthenticator
+      hlx.security.user_token_authenticator: Hlx\Security\Authentication\UserTokenAuthenticator
     firewalls:
       default:
         guard:
           authenticators:
             - hlx.security.form_login_authenticator
+            - hlx.security.user_token_authenticator
+          entry_point: hlx.security.form_login_authenticator
         logout:
           target_url: /
           logout_path: /logout

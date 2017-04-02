@@ -749,16 +749,16 @@
         },
         {
             "name": "honeybee/honeybee",
-            "version": "dev-release/0.1",
+            "version": "0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeybee/honeybee.git",
-                "reference": "62060da6833ebb8e40e64855fbfa3c1493bf3c6d"
+                "reference": "cebb6f3f4b39c56f545b8d35ec967c963d55b1c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/62060da6833ebb8e40e64855fbfa3c1493bf3c6d",
-                "reference": "62060da6833ebb8e40e64855fbfa3c1493bf3c6d",
+                "url": "https://api.github.com/repos/honeybee/honeybee/zipball/cebb6f3f4b39c56f545b8d35ec967c963d55b1c3",
+                "reference": "cebb6f3f4b39c56f545b8d35ec967c963d55b1c3",
                 "shasum": ""
             },
             "require": {
@@ -805,7 +805,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "MPL-2.0"
             ],
             "authors": [
                 {
@@ -840,7 +840,7 @@
                 "hexagonal",
                 "messaging"
             ],
-            "time": "2017-03-31 15:26:58"
+            "time": "2017-03-31T19:56:08+00:00"
         },
         {
             "name": "honeybee/trellis",
@@ -918,12 +918,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/hlx-security.git",
-                "reference": "3768c731bbd14171fe81961612c263f60e7abf2a"
+                "reference": "620c03c64fdc78c40a28a4bf458069eef5171d87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/3768c731bbd14171fe81961612c263f60e7abf2a",
-                "reference": "3768c731bbd14171fe81961612c263f60e7abf2a",
+                "url": "https://api.github.com/repos/honeylex/hlx-security/zipball/620c03c64fdc78c40a28a4bf458069eef5171d87",
+                "reference": "620c03c64fdc78c40a28a4bf458069eef5171d87",
                 "shasum": ""
             },
             "require": {
@@ -944,10 +944,10 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "MPL-2.0"
             ],
             "description": "Security & user administration crate for Honeylex.",
-            "time": "2017-03-31 17:02:29"
+            "time": "2017-04-02 12:13:09"
         },
         {
             "name": "honeylex/honeylex",
@@ -955,18 +955,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/honeylex/honeylex.git",
-                "reference": "5d5c7656d60d55c7ae0fe29a5cb89ea4dba9e5f1"
+                "reference": "3b7291932bb35b10bd6a0f50cac808a1d76a79cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/5d5c7656d60d55c7ae0fe29a5cb89ea4dba9e5f1",
-                "reference": "5d5c7656d60d55c7ae0fe29a5cb89ea4dba9e5f1",
+                "url": "https://api.github.com/repos/honeylex/honeylex/zipball/3b7291932bb35b10bd6a0f50cac808a1d76a79cd",
+                "reference": "3b7291932bb35b10bd6a0f50cac808a1d76a79cd",
                 "shasum": ""
             },
             "require": {
-                "honeybee/honeybee": "dev-release/0.1",
+                "honeybee/honeybee": "^0.1",
                 "nesbot/carbon": "^1.21",
                 "php-amqplib/php-amqplib": "master@dev",
+                "roave/security-advisories": "master@dev",
                 "silex/silex": "^2.0",
                 "swiftmailer/swiftmailer": "^5.4",
                 "symfony/asset": "^2.7|^3.1",
@@ -1002,7 +1003,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "MPL-2.0"
             ],
             "authors": [
                 {
@@ -1032,7 +1033,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2017-03-31 16:55:12"
+            "time": "2017-04-02 12:17:53"
         },
         {
             "name": "league/flysystem",
@@ -4759,16 +4760,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.7",
+            "version": "4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "09e2277d14ea467e5a984010f501343ef29ffc69"
+                "reference": "ef7b2f56815df854e66ceaee8ebe9393ae36a40d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/09e2277d14ea467e5a984010f501343ef29ffc69",
-                "reference": "09e2277d14ea467e5a984010f501343ef29ffc69",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ef7b2f56815df854e66ceaee8ebe9393ae36a40d",
+                "reference": "ef7b2f56815df854e66ceaee8ebe9393ae36a40d",
                 "shasum": ""
             },
             "require": {
@@ -4818,7 +4819,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-01T09:12:17+00:00"
+            "time": "2017-04-02T07:44:40+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",

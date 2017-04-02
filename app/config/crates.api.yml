@@ -7,10 +7,10 @@ Hlx\Security\SecurityCrate:
       access_rules:
         - [ '^/logout$', 'ROLE_USER' ]
     authenticators:
-      hlx.security.token_authenticator: Hlx\Security\Authenticator\TokenAuthenticator
+      hlx.security.header_token_authenticator: Hlx\Security\Authentication\TokenAuthenticator
     firewalls:
       default:
         stateless: true
         guard:
           authenticators:
-            - hlx.security.token_authenticator
+            - hlx.security.header_token_authenticator

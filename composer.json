@@ -4,7 +4,7 @@
     "description": "Honeybee CQRS & ES integration with the Silex framework, for CMS building.",
     "keywords": [ "honeybee", "silex", "symfony", "cqrs", "framework", "event sourcing", "cms", "security" ],
     "homepage": "https://github.com/honeylex/honeylex-cmf",
-    "license": "MIT",
+    "license": "MPL-2.0",
     "authors": [
         {
             "name": "Hasham Ahmad",

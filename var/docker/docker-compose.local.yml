@@ -26,3 +26,8 @@ services:
   elasticsearch:
     volumes:
       - ./elasticsearch:/usr/local/elasticsearch
+
+  elasticsearch-head:
+    image: mobz/elasticsearch-head:2
+    ports:
+      - "9100:9100"
