@@ -1,4 +1,6 @@
 version: "3.1"
+volumes:
+  logs:
 secrets:
   couchdb.json:
     file: ../secrets/default/couchdb.json

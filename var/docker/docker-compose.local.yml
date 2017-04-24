@@ -4,21 +4,25 @@ services:
     environment:
       SERVER1CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=${HOST_NAME}/L=Berlin/C=DE
       SERVER2CERTIFICATE_DNAME: /CN=Honeylex/OU=Honeylex/O=api.${HOST_NAME}/L=Berlin/C=DE
+      SERVER1REVERSE_PROXY_DIRECTIVE1FIELD1: proxy_read_timeout 3000
+      SERVER2REVERSE_PROXY_DIRECTIVE1FIELD1: proxy_read_timeout 3000
 
   nginx:
     volumes:
       - ../../:/var/www
-      - ../logs:/var/log/nginx
+      - logs:/var/log/nginx/default
 
   php_cli:
     volumes:
       - ../../:/var/www
-      - ../logs:/var/log
+      - logs:/var/log/php
+      - logs:/var/www/var/logs
 
   php_fpm:
     volumes:
       - ../../:/var/www
-      - ../logs:/var/log
+      - logs:/var/log/php
+      - logs:/var/www/var/logs
 
   couchdb:
     volumes:
