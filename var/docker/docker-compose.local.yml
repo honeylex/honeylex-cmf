@@ -1,4 +1,6 @@
-version: "3.1"
+version: "3.2"
+volumes:
+  logs:
 services:
   proxy:
     environment:
@@ -10,18 +12,10 @@ services:
   nginx:
     volumes:
       - ../../:/var/www
-      - logs:/var/log/nginx/default
 
-  php_cli:
+  php:
     volumes:
       - ../../:/var/www
-      - logs:/var/log/php
-      - logs:/var/www/var/logs
-
-  php_fpm:
-    volumes:
-      - ../../:/var/www
-      - logs:/var/log/php
       - logs:/var/www/var/logs
 
   couchdb:

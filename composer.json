@@ -45,17 +45,11 @@
         "silex/web-profiler": "^2.0",
         "squizlabs/php_codesniffer": "^2.3"
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "scripts": {
         "code-sniffer": "phpcs --extensions=php --standard=psr2 app tests",
-        "code-sniffer-autofix": "phpcbf --standard=psr2 -d tabWidth=4 src",
-        "honeylex": "docker-compose run --rm php_cli ./bin/honeylex --ansi",
-        "docker:up": "docker-compose up -d",
-        "docker:down": "docker-compose down",
-        "docker:stop": "docker-compose stop",
-        "docker:start": "docker-compose start",
-        "docker:prune": [
-            "docker volume rm $(docker volume ls -qf dangling=true)",
-            "docker rm $(docker ps -a -q)"
-        ]
+        "code-sniffer-autofix": "phpcbf --standard=psr2 -d tabWidth=4 src"
     }
 }
