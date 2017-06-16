@@ -1,5 +1,5 @@
 node:
-  name: Honeylex
+  name: HoneylexCMF
 network:
   host: 0.0.0.0
 http:

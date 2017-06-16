@@ -81,7 +81,6 @@ services:
 
   elasticsearch:
     image: friendsofhoneybee/elasticsearch:2.4
-    command: ["elasticsearch", "--path.conf=/usr/local/elasticsearch/conf"]
     ports:
       - "9200:9200"
       - "9300:9300"

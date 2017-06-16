@@ -61,7 +61,7 @@
             <div class="btn-group pull-right">
                 {% if app.locale_fallbacks|length > 1 %}
                 {% for locale in app.locale_fallbacks %}
-                <button type="button" class="btn btn-xs {{ app.request_stack.getCurrentRequest().locale == locale ? 'btn-info' : 'btn-default' }}">
+                <button type="button" class="btn btn-xs {{ app.request_stack.currentRequest.locale == locale ? 'btn-info' : 'btn-default' }}">
                     <a href="{{ localise_route(locale) }}">{{ locale|trans([], 'locale') }}</a>
                 </button>
                 {% endfor %}
@@ -70,8 +70,11 @@
             {% block footer %}{% endblock %}
             {% if config('appDebug') %}
             <div class="btn-group pull-left">
-                <span class="label label-default">Debug: on</span>
-                <span class="label label-default">Version: {{ config('appVersion') }}@{{ config('appEnv') }}</span>
+                <button type="button" class="btn btn-xs btn-default">Debug: on</button>
+                <button type="button" class="btn btn-xs btn-default">Version: {{ config('appVersion') }}@{{ config('appEnv') }}</button>
+                <button type="button" class="btn btn-xs btn-default"><a href="http://{{ app.request_stack.currentRequest.host }}:5984/_utils" target="_blank">CouchDb</a></button>
+                <button type="button" class="btn btn-xs btn-default"><a href="http://{{ app.request_stack.currentRequest.host }}:9100/?base_uri=http://{{ app.request_stack.currentRequest.host }}:9200" target="_blank">Elasticsearch</a></button>
+                <button type="button" class="btn btn-xs btn-default"><a href="http://{{ app.request_stack.currentRequest.host }}:15672" target="_blank">RabbitMQ</a></button>
             </div>
             {% endif %}
         </footer>

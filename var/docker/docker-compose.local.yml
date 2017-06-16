@@ -1,6 +1,7 @@
 version: "3.2"
 volumes:
-  logs:
+  couchdb:
+  elasticsearch:
 services:
   proxy:
     environment:
@@ -16,15 +17,15 @@ services:
   php:
     volumes:
       - ../../:/var/www
-      - logs:/var/www/var/logs
 
   couchdb:
     volumes:
-      - ../../data/couchdb:/usr/local/var/lib/couchdb
+      - couchdb:/usr/local/var/lib/couchdb
 
   elasticsearch:
     volumes:
-      - ./elasticsearch:/usr/local/elasticsearch
+      - ./elasticsearch/conf:/usr/share/elasticsearch/config:ro
+      - elasticsearch:/usr/share/elasticsearch/data
 
   elasticsearch-head:
     image: mobz/elasticsearch-head:2
